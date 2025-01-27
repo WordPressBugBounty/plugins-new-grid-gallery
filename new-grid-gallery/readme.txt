@@ -1,15 +1,14 @@
-=== Grid Gallery - Photo Image Grid Gallery ===
-Contributors: awordpresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
+=== Grid Gallery - Responsive Photo Image Gallery ===
+Contributors: aWordPresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
-Tags: photo gallery, image gallery, wordpress gallery plugin, portfolio gallery, grid gallery
+Tags: photo gallery, image gallery, WordPress gallery plugin, portfolio gallery, grid gallery
 Requires at least: 3.8
-Tested up to: 6.6.2
-Stable tag: 1.4.8
+Tested up to: 6.7.1
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Grid Gallery - Awesome plugin for your Gallery, plugin is allow users to view larger images, designer slide shows, Easing Effects and responsive grid gallery columns layout
-Image, Photo Slider Grid, Google Type Grid, Google Type Gallrey
+Grid Gallery is a responsive WordPress plugin that lets you create stunning grid-based image galleries with easy customization and smooth animations
 
 == Description ==
 
@@ -41,7 +40,7 @@ Grid Gallery - an awesome plugin for your blog, This plugin is allow users to vi
 
 https://www.youtube.com/watch?v=GusIaoInRJQ
 
-**Upgrade To Premium Plugin - <a href="https://awplife.com/wordpress-plugins/grid-gallery-premium/">Click Here</a>**
+**Upgrade To Premium Plugin - <a href="https://awplife.com/WordPress-plugins/grid-gallery-premium/">Click Here</a>**
 
 **Check Premium Plugin Demo - <a href="https://awplife.com/demo/grid-gallery-premium/">Click Here</a>**
 
@@ -117,65 +116,65 @@ Have any queries?
 
 Please post your question on plguin support forum
 
-https://wordpress.org/support/plugin/grid-gallery/
+https://WordPress.org/support/plugin/grid-gallery/
 
 = Recommended Plugins =
 
 The following are other recommended plugins by the author:
 
-* [Portfolio Filter Gallery](https://wordpress.org/plugins/portfolio-filter-gallery/ "Best Portfolio Filter Gallery") - The Gallery Plugin to create awesome Portfolio Filter Gallery Plugin in minutes. 
+* [Portfolio Filter Gallery](https://WordPress.org/plugins/portfolio-filter-gallery/ "Best Portfolio Filter Gallery") - The Gallery Plugin to create awesome Portfolio Filter Gallery Plugin in minutes. 
 
 The following are other recommended plugins by the author:
 
-* [Portfolio Filter Gallery](https://wordpress.org/plugins/blog-filter/ "Best Blog Filter Gallery") - The Gallery create Blog Filter Gallery in minutes. 
+* [Portfolio Filter Gallery](https://WordPress.org/plugins/blog-filter/ "Best Blog Filter Gallery") - The Gallery create Blog Filter Gallery in minutes. 
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/blog-filter-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/blog-filter-premium/">Click Here</a>**
 
-* [Media Slider](https://wordpress.org/plugins/media-slider/ "Best Media Slider") - The Media Slider Plugin to create Media / Video Slider Gallery Plugin in minutes. 
+* [Media Slider](https://WordPress.org/plugins/media-slider/ "Best Media Slider") - The Media Slider Plugin to create Media / Video Slider Gallery Plugin in minutes. 
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/media-slider-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/media-slider-premium/">Click Here</a>**
 
-* [Best Weather Effect Plugin](https://wordpress.org/plugins/weather-effect/ "Best Weather Effect Plugin") - Very Simple And Easy To Design Your Sites With Multiple Effects.
+* [Best Weather Effect Plugin](https://WordPress.org/plugins/weather-effect/ "Best Weather Effect Plugin") - Very Simple And Easy To Design Your Sites With Multiple Effects.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/weather-effect-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/weather-effect-premium/">Click Here</a>**
 
-* [Best Gallery Plugin](https://wordpress.org/plugins/new-grid-gallery/ "Bes Galley Plugin") - Easy Gallery Widget - Displaying your image in Page & Post widget/sidebar area with very easy.Allows you to customize it to looking exactly what you want.
+* [Best Gallery Plugin](https://WordPress.org/plugins/new-grid-gallery/ "Bes Galley Plugin") - Easy Gallery Widget - Displaying your image in Page & Post widget/sidebar area with very easy.Allows you to customize it to looking exactly what you want.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/grid-gallery-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/grid-gallery-premium/">Click Here</a>**
 
-* [Image Gallery Plugin](https://wordpress.org/plugins/new-image-gallery/ "Image Gallery Plugin") - Gallery Lightbox - Displays all gallery images into the lightbox slider in just a few seconds.
+* [Image Gallery Plugin](https://WordPress.org/plugins/new-image-gallery/ "Image Gallery Plugin") - Gallery Lightbox - Displays all gallery images into the lightbox slider in just a few seconds.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/image-gallery-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/image-gallery-premium/">Click Here</a>**
 
-* [Photo Gallery Plugin](https://wordpress.org/plugins/new-photo-gallery/ "Image Gallery Plugin") - Displays all  Photo Gallery, Video Gallery, Link Gallery, Map Gallery into Wordpress in just a few seconds.
+* [Photo Gallery Plugin](https://WordPress.org/plugins/new-photo-gallery/ "Image Gallery Plugin") - Displays all  Photo Gallery, Video Gallery, Link Gallery, Map Gallery into Wordpress in just a few seconds.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/photo-gallery-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/photo-gallery-premium/">Click Here</a>**
 
-* [Slider Plugin](https://wordpress.org/plugins/responsive-slider-gallery/ "Slider Plugin") - Fully Responsive Slider Gallery For Wordpress ,You can Show Slider Into Page/Post & Widget/Sidebar By Generate Shortcode.
+* [Slider Plugin](https://WordPress.org/plugins/responsive-slider-gallery/ "Slider Plugin") - Fully Responsive Slider Gallery For Wordpress ,You can Show Slider Into Page/Post & Widget/Sidebar By Generate Shortcode.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/responsive-slider-gallery-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/responsive-slider-gallery-premium/">Click Here</a>**
 
-* [Contact Form](https://wordpress.org/plugins/new-contact-form-widget/ "Contact Form Plugin") - Contact Form Widget Shortcode Plugin For WordPress.
+* [Contact Form](https://WordPress.org/plugins/new-contact-form-widget/ "Contact Form Plugin") - Contact Form Widget Shortcode Plugin For WordPress.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/contact-form-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/contact-form-premium/">Click Here</a>**
 
-* [Social Media Plugin](https://wordpress.org/plugins/new-social-media-widget/ "Social Media") - Display your Social Media Plugin into Widget/Sidebar in WordPress site with very easily.
+* [Social Media Plugin](https://WordPress.org/plugins/new-social-media-widget/ "Social Media") - Display your Social Media Plugin into Widget/Sidebar in WordPress site with very easily.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/social-media-widget-premium//">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/social-media-widget-premium//">Click Here</a>**
 
-* [Best Responsive Slider Plugin](https://wordpress.org/plugins/slider-responsive-slideshow/ "Responsive Slider Plugin") - Fully Responsive Light Weight Easy Powerful WordPress Slider Slideshow Plugin.
+* [Best Responsive Slider Plugin](https://WordPress.org/plugins/slider-responsive-slideshow/ "Responsive Slider Plugin") - Fully Responsive Light Weight Easy Powerful WordPress Slider Slideshow Plugin.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/slider-responsive-slideshow-premium//">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/slider-responsive-slideshow-premium//">Click Here</a>**
 
-* [Video Gallery Plugin](https://wordpress.org/plugins/new-video-gallery/ "Best Video Gallery Plugin") - The Best Responsive video gallery For Wordpress.
+* [Video Gallery Plugin](https://WordPress.org/plugins/new-video-gallery/ "Best Video Gallery Plugin") - The Best Responsive video gallery For Wordpress.
 
-**Buy Premium Plugin - <a href="https://awplife.com/wordpress-plugins/video-gallery-premium/">Click Here</a>**
+**Buy Premium Plugin - <a href="https://awplife.com/WordPress-plugins/video-gallery-premium/">Click Here</a>**
 
-* [Facebook Like Share Follow Button](https://wordpress.org/plugins/new-facebook-like-share-follow-button/ "Facebook Like Share Follow Button") - Display your Facebook Like Share Follow Button Plugin into Page/Post & Widget/Sidebar in WordPress sites with very easily.
+* [Facebook Like Share Follow Button](https://WordPress.org/plugins/new-facebook-like-share-follow-button/ "Facebook Like Share Follow Button") - Display your Facebook Like Share Follow Button Plugin into Page/Post & Widget/Sidebar in WordPress sites with very easily.
  
-* [Google Plus Badge](https://wordpress.org/plugins/new-google-plus-badge/ "Google Plus Badge") - Google+ Badge & Profile Widget For Show Into Widget & sidebar
+* [Google Plus Badge](https://WordPress.org/plugins/new-google-plus-badge/ "Google Plus Badge") - Google+ Badge & Profile Widget For Show Into Widget & sidebar
 
-* [Facebook Like Box Plugin](https://wordpress.org/plugins/facebook-likebox-widget-and-shortcode/ "Facebook Likebox Plugin") - Facebook Light Box Plugin For Wordpress 
+* [Facebook Like Box Plugin](https://WordPress.org/plugins/facebook-likebox-widget-and-shortcode/ "Facebook Likebox Plugin") - Facebook Light Box Plugin For Wordpress 
  
 
 == Screenshots ==
@@ -196,23 +195,28 @@ The following are other recommended plugins by the author:
 
 == Changelog ==
 
+= 1.4.9 =
+* Bug Fix: Fixed.
+* Testing plugin for WordPress 6.7.1
+* New plugin icons and banner updated.
+
 = 1.4.8 =
 * Bug Fix: Fixed.
-* Testing plugin for wordpress 6.6.2
+* Testing plugin for WordPress 6.6.2
 
 = 1.4.7 =
-* Testing plugin for wordpress 6.6.2
+* Testing plugin for WordPress 6.6.2
 
 = 1.4.6 =
-* Testing plugin for wordpress 6.6.1
+* Testing plugin for WordPress 6.6.1
 
 = 1.4.5 =
-* Testing plugin for wordpress 6.5.4
+* Testing plugin for WordPress 6.5.4
 
 = 1.4.4 =
 * Bug Fix: Fixed.
-* wordpress security issues update.
-* Testing plugin for wordpress 6.5.3
+* WordPress security issues update.
+* Testing plugin for WordPress 6.5.3
 
 = 1.4.3 =
 * Bug Fix: Fixed.
@@ -220,23 +224,23 @@ The following are other recommended plugins by the author:
 
 = 1.4.2 =
 * Bug Fix: Fixed.
-* wordpress security issues Fixed
-* Testing plugin for wordpress 6.4.3
+* WordPress security issues Fixed
+* Testing plugin for WordPress 6.4.3
 
 = 1.4.1 =
 * Bug Fix: Fixed.
 * Additional changes: None.
-* Testing plugin for wordpress 6.4.3
+* Testing plugin for WordPress 6.4.3
 
 = 1.4.0 =
 * Bug Fix: Fixed.
 * Additional changes: None.
-* Testing plugin for wordpress 6.4.2
+* Testing plugin for WordPress 6.4.2
 
 = 1.3.9 =
 * Bug Fix: Fixed.
 * Additional changes: None.
-* Testing plugin for wordpress 6.4.2
+* Testing plugin for WordPress 6.4.2
 
 = 1.3.8 =
 * Enhancements: tested for WordPress 6.3.2
@@ -257,7 +261,7 @@ The following are other recommended plugins by the author:
 * Enhancements: tested for WordPress 6.0.3
 
 = 1.3.2 =
-* wordpress security issues fixed
+* WordPress security issues fixed
 
 = 1.3.1 =
 * Enhancements: tested for WordPress 6.0.1
@@ -273,7 +277,7 @@ The following are other recommended plugins by the author:
 
 = 1.2.7 =
 * Enhancements: tested for WordPress 5.8.1
-* wordpress security issues fixed
+* WordPress security issues fixed
 
 = 1.2.6 =
 * Enhancements: tested for WordPress 5.8.1
@@ -692,4 +696,4 @@ Feature Enhancements: Version 0.0.1
 * Additional changes: None
 
 == Upgrade Notice ==
-This is an initial release. Start with version 0.1. and share your feedback <a href="https://wordpress.org/support/view/plugin-reviews/grid-gallery//">here</a>.
+This is an initial release. Start with version 0.1. and share your feedback <a href="https://WordPress.org/support/view/plugin-reviews/grid-gallery//">here</a>.
