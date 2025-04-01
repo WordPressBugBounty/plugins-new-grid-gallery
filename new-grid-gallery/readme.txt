@@ -3,8 +3,8 @@ Contributors: aWordPresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkh
 Donate link: https://paypal.me/awplife
 Tags: photo gallery, image gallery, WordPress gallery plugin, portfolio gallery, grid gallery
 Requires at least: 3.8
-Tested up to: 6.7.1
-Stable tag: 1.4.9
+Tested up to: 6.7.2
+Stable tag: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,16 +50,10 @@ https://www.youtube.com/watch?v=GusIaoInRJQ
 
 > * [Grid Gallery Premium](https://awplife.com/demo/grid-gallery-premium/ "Grid Gallery Premium")
 > * [Customize Border Settings](https://awplife.com/demo/grid-gallery-premium/customize-border-settings/ "Customize Border Settings")
-> * [Thumbnail Settings](https://awplife.com/demo/grid-gallery-premium/thumbnail-setting/ "Thumbnail Settings")
 > * [Image Hover Effects](https://awplife.com/demo/grid-gallery-premium/image-hover-effects/ "Image Hover Effects")
-> * [Animation Speed On Image Open](https://awplife.com/demo/grid-gallery-premium/animation-speed-on-image-open/ "Animation Speed On Image Open")
-> * [Easing Effect On Image Open](https://awplife.com/demo/grid-gallery-premium/easing-effect/ "Easing Effect On Image Open")
 > * [Spacing Settings](http://awplife.com/demo/grid-gallery-premium/spacing-settings/ "Spacing Settings")
-> * [Link Settings](https://awplife.com/demo/grid-gallery-premium/link-settings/ "Link Settings")
-> * [Title And Description On Image](https://awplife.com/demo/grid-gallery-premium/title-and-description-on-image-preview/ "Title And Description On Image")
 > * [Title And Description On Thumbnails](https://awplife.com/demo/grid-gallery-premium/title-and-description-on-thumbnails/ "Title And Description On Thumbnails")
 > * [Column Layout](https://awplife.com/demo/grid-gallery-premium/column-layout/ "Column Layout")
-> * [Admin Demo](https://awplife.com/demo/grid-gallery-premium-admin-demo/ "Admin Demo")
 > * [Buy Grid Gallery Premium](https://awplife.com/account/signup/grid-gallery-premium "Buy Grid Gallery Premium")
 
 **Get Premium Version With More Features**
@@ -179,21 +173,20 @@ The following are other recommended plugins by the author:
 
 == Screenshots ==
 
-1. Grid Gallery Plugin
-2. Preview
-3. Responsive Gallery
-4. Without Spacing
-5. With Spacing
+1. Colorful Grid
+2. Opened Image
+3. Another Preview
+4. Single Image Preview
+5. Grid Styling with Border
 6. Without Title 
-7. With Title
-8. Navigation Buttons Position Right Side  On Image Preview
-9. Navigation Buttons Position Left Side  On Image Preview
-10. Image Preview 
-11. Shortcode Settings
-12. Tools option
-13. Settings Page
+7. Hover Effect on Mouse Over
+8. Navigation Controls
 
 == Changelog ==
+
+= 1.5.0 =
+* Bug Fix: Fixed.
+* Testing plugin for WordPress 6.7.2
 
 = 1.4.9 =
 * Bug Fix: Fixed.

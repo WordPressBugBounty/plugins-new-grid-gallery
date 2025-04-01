@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 Plugin Name: New Grid Gallery
 Plugin URI: https://awplife.com/wodpress-plugins/grid-gallery-premium/
 Description: Grid gallery plugin with preview for WordPress
-Version: 1.4.9
+Version: 1.5.0
 Author: A WP Life
 Author URI: https://awplife.com/
 Text Domain: GGP_TXTDM
@@ -26,7 +26,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 
 		protected function _constants() {
 			// Plugin Version
-			define( 'GG_PLUGIN_VER', '1.4.9' );
+			define( 'GG_PLUGIN_VER', '1.5.0' );
 
 			// Plugin Text Domain
 			define( 'GGP_TXTDM', 'new-grid-gallery' );
