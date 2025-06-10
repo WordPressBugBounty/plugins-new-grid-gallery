@@ -3,8 +3,8 @@ Contributors: aWordPresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkh
 Donate link: https://paypal.me/awplife
 Tags: photo gallery, image gallery, WordPress gallery plugin, portfolio gallery, grid gallery
 Requires at least: 3.8
-Tested up to: 6.7.2
-Stable tag: 1.5.0
+Tested up to: 6.8.1
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -183,6 +183,10 @@ The following are other recommended plugins by the author:
 8. Navigation Controls
 
 == Changelog ==
+
+= 1.5.1 =
+* Bug Fix: Fixed.
+* Testing plugin for WordPress 6.8.1
 
 = 1.5.0 =
 * Bug Fix: Fixed.
