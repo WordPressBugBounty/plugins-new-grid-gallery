@@ -1,78 +1,65 @@
-=== Grid Gallery for Images ===
+=== Grid Gallery - for Photo Gallery, Image Gallery & Portfolio ===
 Contributors: aWordPresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 3.8
 Tested up to: 6.9
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create responsive grid galleries with hover effects and smooth animations. Easy shortcode integration for pages and posts.
+Create a beautiful Photo Gallery, Image Gallery, or Portfolio on your website. Use simple shortcodes to show your images.
 
 == Description ==
 
-Grid Gallery helps you showcase your images in a clean, organized grid layout. Unlike traditional lightbox galleries, this one presents images in a slider-style preview while keeping the familiar gallery appearance. It's a fresh approach that works well for photographers, artists, and anyone who wants their images to stand out.
+Do you want to show your images in a clean grid? This plugin helps you create a stunning Photo Gallery, Image Gallery, or design Portfolio. 
+
+Showcase your photographs, design projects, and business assets with high-performance grids. Traditional galleries use pop-ups that hurt user experience. Grid Gallery expands clicked images inside the page layout itself. This keeps your visitors focused, engaged, and reading your content longer.
+
+It works great for:
+* Photographers who want to show their best shots in a beautiful Photo Gallery.
+* Artists displaying their creative designs in a professional Portfolio.
+* Business owners showing their latest products in a clean Image Gallery.
+* Bloggers sharing their favorite travel stories.
 
 **View Pro Demo:** **[Grid Gallery Premium](https://awplife.com/demo/grid-gallery-premium/)**
 **More About Pro:** **[Grid Gallery Premium Features](https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/)**
-**Where To buy:** **[Buy Grid Gallery Premium](https://awplife.com/account/signup/grid-gallery-premium)**
+**Where To Buy:** **[Buy Grid Gallery Premium](https://awplife.com/account/signup/grid-gallery-premium)**
 
 https://www.youtube.com/watch?v=GusIaoInRJQ
 
 = Why Choose Grid Gallery? =
 
-When visitors click on a thumbnail, the image opens smoothly within the gallery area – no popup windows or separate lightbox overlays. This keeps users engaged on your page while they browse through your photos.
+* **Seamless Inline Previews:** Users browse full-sized images directly within the grid structure without launching separate windows.
+* **SEO-Optimized Image Loading:** Built to load assets quickly, which boosts search engine rankings and keeps users happy.
+* **Touch-Enabled Mobile Sliders:** Mobile visitors swipe through your gallery easily with fluid, finger-friendly touch navigation gestures.
+* **Clean HTML5 Architecture:** Coded strictly with semantic standards to match any premium or custom WordPress theme effortlessly.
 
-The gallery adapts to any screen size using CSS3 hardware acceleration, so it looks crisp and performs smoothly on phones, tablets, and desktops alike.
+= Build Your Photo Gallery, Image Gallery, or Portfolio =
 
-= What You Can Do =
-
-* Build unlimited galleries with as many images as you need
-* Display galleries anywhere using simple shortcodes
-* Add titles and descriptions to your images
-* Choose from multiple hover animation effects
-* Customize column layouts to match your design
-* Adjust animation speed and transition styles
-
-= Perfect For =
-
-* Photography portfolios
-* Art and design showcases
-* Product catalogs
-* Event photo collections
-* Travel blogs
-* Personal photo albums
+* Organize your photos into unlimited customized collections for different pages.
+* Upload multiple images simultaneously using the built-in WordPress media library interface.
+* Copy and paste simple shortcodes to display grids on pages, posts, or widgets.
+* Customize grid columns, animation speeds, hover styles, and thumbnail borders.
 
 = Free Features =
 
-* Responsive grid layout
-* 3 hover animation effects
-* Shortcode support for pages and posts
-* Image titles with show/hide option
-* Navigation controls
-* Mobile-friendly touch support
-* Unlimited galleries
+* Fluid responsive design that adapts perfectly to desktop, tablet, and mobile screens.
+* Three unique hover styles including shadow outset and float animations.
+* Show or hide custom image titles inside the grid overlays.
+* Customizable animation transition speeds from 100ms to 2000ms.
+* Clean custom CSS input box to safely override default plugin styles.
 
 = Pro Features =
 
-The premium version adds more customization options for professional use:
+Get even more options with our premium version:
 
-* 6 column layout options
-* 25 animation easing effects
-* 20 hover effects
-* 5 navigation button positions
-* 5 title and description positions
-* Title on image preview
-* Description on image preview
-* Custom thumbnail border settings
-* Custom image spacing controls
-* Link images to external URLs
-* Auto scroll functionality
-* Load more button
-* Custom CSS support
-* Gallery ordering (ascending, descending, shuffle)
-* Priority support
+* Six beautiful column layout configurations for any page width.
+* Twenty creative hover effects including slide, zoom, and background color overlays.
+* Twenty-five advanced easing animations for smooth, professional image expansion.
+* Direct external linking to connect gallery images to specific URLs or landing pages.
+* Infinite scroll and "Load More" pagination to manage high-volume image libraries.
+* Complete color and typography customization for titles, descriptions, and buttons.
 
 **More Pro Demo Examples**
 
@@ -84,54 +71,42 @@ The premium version adds more customization options for professional use:
 
 == Installation ==
 
-1. Upload the plugin files to `/wp-content/plugins/new-grid-gallery/` directory, or install through the WordPress plugins screen.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Go to Grid Gallery menu in your admin panel.
-4. Click 'Add New Gallery' and upload your images.
-5. Configure your gallery settings.
-6. Copy the shortcode and paste it into any page or post.
+1. Go to your WordPress admin panel.
+2. Search for "New Grid Gallery" in the plugins screen.
+3. Install and activate the plugin.
+4. Go to the new "Grid Gallery" menu.
+5. Click "Add New" and upload your photos.
+6. Copy the shortcode and paste it on any page.
 
 == Frequently Asked Questions ==
 
-= How do I create a new gallery? =
+= How do I create a new Photo Gallery, Image Gallery, or Portfolio? =
 
-Go to Grid Gallery in your WordPress admin, click "Add New Gallery," upload your images, adjust the settings, and save. Copy the generated shortcode to any page or post.
+Navigate to the "Grid Gallery" menu in your WordPress dashboard and click "Add New." Upload your images using the uploader, choose your desired columns and animation speeds in the settings panel below, and click Publish. Copy the generated shortcode and paste it directly into your post, page, or page builder text element.
 
-= Is Grid Gallery mobile responsive? =
+= Can I use this for a design Portfolio? =
 
-Yes. The gallery automatically adjusts to fit any screen size, from large desktop monitors to mobile phones. It uses CSS3 transitions for smooth performance.
+Yes. The grid structure and clean hover animations make it an excellent choice for a professional portfolio. You can showcase illustrations, web design screenshots, or photography portfolios in elegant grids that highlight your work beautifully.
 
-= Can I add captions to my images? =
+= Does this Image Gallery work on mobile phones? =
 
-Yes. You can add titles and descriptions to each image. The free version lets you show or hide titles, while the pro version offers more positioning options.
+Absolutely. The plugin is designed with a fully responsive fluid grid. It uses CSS3 hardware acceleration to ensure smooth transitions and supports natural swipe gestures for a perfect mobile viewing experience.
 
-= How many galleries can I create? =
+= Can I add titles to my photos? =
 
-There's no limit. You can create as many galleries as you need, each with its own settings and shortcode.
+Yes. You can add unique titles and descriptions to each uploaded image. You have full control to display or hide titles on the thumbnail grid or show them during the active preview expansion.
 
-= Does Grid Gallery work with page builders? =
+= Does it work with page builders? =
 
-Yes. Since galleries use shortcodes, they work with most page builders including Elementor, Beaver Builder, and the default WordPress block editor.
+Yes, it is fully compatible with major page builders like Elementor, Divi, Beaver Builder, and the standard Gutenberg block editor. Simply paste the gallery shortcode into any text or HTML block.
 
-= How do I customize hover effects? =
+= Can I link photos to other pages? =
 
-In the gallery settings, you'll find options for hover effects. The free version includes 3 effects, and the pro version offers 20 different hover styles.
+This feature is available in the Pro version. You can add custom links to any photo in your image gallery to direct users to specific landing pages.
 
-= Can I link images to external URLs? =
+= Where do I get support? =
 
-This feature is available in the pro version. You can set custom links for each image to open external pages or files.
-
-= Does the gallery have a lightbox? =
-
-Grid Gallery uses a slider-style preview instead of a traditional lightbox. When you click an image, it opens within the gallery area with navigation controls to browse other images.
-
-= Can I change the number of columns? =
-
-The free version uses a standard grid layout. The pro version offers 6 different column layouts to choose from.
-
-= Where can I get support? =
-
-For questions or issues, visit our [support forum](https://wordpress.org/support/plugin/new-grid-gallery/) or [contact us directly](https://awplife.com/contact/).
+You can ask questions on our support forum. We are happy to help you.
 
 == Screenshots ==
 
@@ -146,6 +121,13 @@ For questions or issues, visit our [support forum](https://wordpress.org/support
 
 == Changelog ==
 
+= 1.5.5 =
+* 2026-6-05
+* Added "Our Plugins" and "Our Themes" pages to admin dashboard submenus.
+* Enqueued shared CSS asset dynamically specifically on these submenu pages.
+* Hardened administrative transient refresh action with secure WordPress nonces.
+* Upgraded documentation page and settings panel with beautiful, modern responsive styles.
+
 = 1.5.4 =
 * Tested with WordPress 6.9
 
@@ -153,7 +135,7 @@ For questions or issues, visit our [support forum](https://wordpress.org/support
 * Tested with WordPress 6.8.3
 
 = 1.5.2 =
-* Fixed text domain error
+* Fixed text domain errors.
 * Tested with WordPress 6.8.2
 
 = 1.5.1 =
@@ -165,6 +147,9 @@ For questions or issues, visit our [support forum](https://wordpress.org/support
 * Tested with WordPress 6.7.2
 
 == Upgrade Notice ==
+
+= 1.5.5 =
+Added support for "Our Plugins" and "Our Themes" submenu pages with secure cache refresh and modern responsive designs. Update recommended for all users.
 
 = 1.5.4 =
 Tested and compatible with WordPress 6.9. Update recommended for all users.

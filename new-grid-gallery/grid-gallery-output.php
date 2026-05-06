@@ -108,14 +108,15 @@ while ( $loop->have_posts() ) :
 endwhile;
 wp_reset_query();
 ?>
-<script>
+<?php
+$inline_js = '
 jQuery(document).ready(function (jQuery) {
 	// Call Gridder
-	jQuery(".gg-<?php echo esc_js( $grid_gallery_id ); ?>").gridderExpander({
-		scroll: <?php echo esc_js( $scroll_loading ); ?>,
+	jQuery(".gg-' . esc_js( $grid_gallery_id ) . '").gridderExpander({
+		scroll: ' . esc_js( $scroll_loading ) . ',
 		scrollOffset: 100,
 		scrollTo: "panel", // panel or list item
-		animationSpeed: <?php echo esc_js( $animation_speed ); ?>,
+		animationSpeed: ' . esc_js( $animation_speed ) . ',
 		animationEasing: "easeInOutExpo",
 		showNav: true,
 		nextText: "<i class=\"fa fa-arrow-right\"></i>",
@@ -133,4 +134,6 @@ jQuery(document).ready(function (jQuery) {
 		}
 	});
 });
-</script>
+';
+wp_add_inline_script( 'awl-gridder-js', $inline_js );
+?>

@@ -3,11 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 // toggle button CSS
-wp_enqueue_style( 'awl-toogle-button-css', GG_PLUGIN_URL . 'css/toogle-button.css' );
-wp_enqueue_style( 'awl-bootstrap-css', GG_PLUGIN_URL . 'css/bootstrap.css' );
-wp_enqueue_style( 'awl-font-awesome-css', GG_PLUGIN_URL . 'css/font-awesome.css' );
 // js
-wp_enqueue_script( 'awl-bootstrap-js', GG_PLUGIN_URL . 'js/bootstrap.min.js' );
 
 $gg_settings = get_post_meta( $post->ID, 'awl_gg_settings_' . $post->ID, true );
 
@@ -55,26 +51,22 @@ $grid_gallery_id = esc_attr($post->ID);
 	<select id="gal_thumb_size" name="gal_thumb_size" class="" style="margin-left: 10px; width: 300px;">
 		<option value="thumbnail" 
 		<?php
-		if ( $gal_thumb_size == 'thumbnail' ) {
-			echo 'selected=selected';}
+		selected( $gal_thumb_size, 'thumbnail' );
 		?>
 		><?php esc_html_e( 'Thumbnail – 150 × 150', 'new-grid-gallery' ); ?></option>
 		<option value="medium" 
 		<?php
-		if ( $gal_thumb_size == 'medium' ) {
-			echo 'selected=selected';}
+		selected( $gal_thumb_size, 'medium' );
 		?>
 		><?php esc_html_e( 'Medium – 300 × 169', 'new-grid-gallery' ); ?></option>
 		<option value="large" 
 		<?php
-		if ( $gal_thumb_size == 'large' ) {
-			echo 'selected=selected';}
+		selected( $gal_thumb_size, 'large' );
 		?>
 		><?php esc_html_e( 'Large – 840 × 473', 'new-grid-gallery' ); ?></option>
 		<option value="full" 
 		<?php
-		if ( $gal_thumb_size == 'full' ) {
-			echo 'selected=selected';}
+		selected( $gal_thumb_size, 'full' );
 		?>
 		><?php esc_html_e( 'Full Size – 1280 × 720', 'new-grid-gallery' ); ?></option>
 	</select><br><br>
@@ -94,38 +86,32 @@ $grid_gallery_id = esc_attr($post->ID);
 	<select id="col_large_desktops" name="col_large_desktops" class="form-control">
 		<option value="1_column" 
 		<?php
-		if ( $col_large_desktops == '1_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '1_column' );
 		?>
 		><?php esc_html_e( '1 Column', 'new-grid-gallery' ); ?></option>
 		<option value="2_column" 
 		<?php
-		if ( $col_large_desktops == '2_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '2_column' );
 		?>
 		><?php esc_html_e( '2 Column', 'new-grid-gallery' ); ?></option>
 		<option value="3_column" 
 		<?php
-		if ( $col_large_desktops == '3_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '3_column' );
 		?>
 		><?php esc_html_e( '3 Column', 'new-grid-gallery' ); ?></option>
 		<option value="4_column" 
 		<?php
-		if ( $col_large_desktops == '4_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '4_column' );
 		?>
 		><?php esc_html_e( '4 Column', 'new-grid-gallery' ); ?></option>
 		<option value="5_column" 
 		<?php
-		if ( $col_large_desktops == '5_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '5_column' );
 		?>
 		><?php esc_html_e( '5 Column', 'new-grid-gallery' ); ?></option>
 		<option value="6_column" 
 		<?php
-		if ( $col_large_desktops == '6_column' ) {
-			echo 'selected=selected';}
+		selected( $col_large_desktops, '6_column' );
 		?>
 		><?php esc_html_e( '6 Column', 'new-grid-gallery' ); ?></option>
 	</select><br><br>
@@ -161,15 +147,13 @@ $grid_gallery_id = esc_attr($post->ID);
 		<p class="switch-field em_size_field">
 			<input type="radio" name="image_hover_effect_type" id="image_hover_effect_type1" value="no" 
 			<?php
-			if ( $image_hover_effect_type == 'no' ) {
-				echo 'checked=checked';}
+			checked( $image_hover_effect_type, 'no' );
 			?>
 			>
 			<label for="image_hover_effect_type1"><?php esc_html_e( 'None', 'new-grid-gallery' ); ?></label>
 			<input type="radio" name="image_hover_effect_type" id="image_hover_effect_type2" value="sg" 
 			<?php
-			if ( $image_hover_effect_type == 'sg' ) {
-				echo 'checked=checked';}
+			checked( $image_hover_effect_type, 'sg' );
 			?>
 			>
 			<label for="image_hover_effect_type2"><?php esc_html_e( 'Shadow and Glow', 'new-grid-gallery' ); ?></label>
@@ -191,20 +175,17 @@ $grid_gallery_id = esc_attr($post->ID);
 			<optgroup label="Shadow and Glow Transitions Effects" class="sg">
 				<option value="hvr-float-shadow" 
 				<?php
-				if ( $image_hover_effect_four == 'hvr-float-shadow' ) {
-					echo 'selected=selected';}
+				selected( $image_hover_effect_four, 'hvr-float-shadow' );
 				?>
 				><?php esc_html_e( 'Float Shadow', 'new-grid-gallery' ); ?></option>
 				<option value="hvr-shadow-radial" 
 				<?php
-				if ( $image_hover_effect_four == 'hvr-shadow-radial' ) {
-					echo 'selected=selected';}
+				selected( $image_hover_effect_four, 'hvr-shadow-radial' );
 				?>
 				><?php esc_html_e( 'Shadow Radial', 'new-grid-gallery' ); ?></option>
 				<option value="hvr-box-shadow-outset" 
 				<?php
-				if ( $image_hover_effect_four == 'hvr-box-shadow-outset' ) {
-					echo 'selected=selected';}
+				selected( $image_hover_effect_four, 'hvr-box-shadow-outset' );
 				?>
 				><?php esc_html_e( 'Box Shadow Outset', 'new-grid-gallery' ); ?></option>
 			</optgroup>
@@ -226,15 +207,13 @@ $grid_gallery_id = esc_attr($post->ID);
 	<p class="switch-field em_size_field">
 		<input type="radio" name="scroll_loading" id="scroll_loading1" value="true" 
 		<?php
-		if ( $scroll_loading == 'true' ) {
-			echo 'checked=checked';}
+		checked( $scroll_loading, 'true' );
 		?>
 		>
 			<label for="scroll_loading1"><?php esc_html_e( 'Yes', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="scroll_loading" id="scroll_loading2" value="false" 
 		<?php
-		if ( $scroll_loading == 'false' ) {
-			echo 'checked=checked';}
+		checked( $scroll_loading, 'false' );
 		?>
 		>
 			<label for="scroll_loading2"><?php esc_html_e( 'No', 'new-grid-gallery' ); ?></label>
@@ -262,15 +241,13 @@ $grid_gallery_id = esc_attr($post->ID);
 	<p class="switch-field em_size_field">
 		<input type="radio" name="nbp_setting2" id="nbp_setting2_1" value="left" 
 		<?php
-		if ( $nbp_setting2 == 'left' ) {
-			echo 'checked=checked';}
+		checked( $nbp_setting2, 'left' );
 		?>
 		>
 			<label for="nbp_setting2_1"><?php esc_html_e( 'Left', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="nbp_setting2" id="nbp_setting2_2" value="right" 
 		<?php
-		if ( $nbp_setting2 == 'right' ) {
-			echo 'checked=checked';}
+		checked( $nbp_setting2, 'right' );
 		?>
 		>
 			<label for="nbp_setting2_2"><?php esc_html_e( 'Right', 'new-grid-gallery' ); ?></label>
@@ -292,15 +269,13 @@ $grid_gallery_id = esc_attr($post->ID);
 		?>
 		<input type="radio" name="thumb_title" id="thumb_title1" value="hide" 
 		<?php
-		if ( $thumb_title == 'hide' ) {
-			echo 'checked=checked';}
+		checked( $thumb_title, 'hide' );
 		?>
 		>
 		<label for="thumb_title1"><?php esc_html_e( 'Hide', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="thumb_title" id="thumb_title2" value="show" 
 		<?php
-		if ( $thumb_title == 'show' ) {
-			echo 'checked=checked';}
+		checked( $thumb_title, 'show' );
 		?>
 		>
 		<label for="thumb_title2"><?php esc_html_e( 'Show', 'new-grid-gallery' ); ?></label>
@@ -322,15 +297,13 @@ $grid_gallery_id = esc_attr($post->ID);
 	<p class="switch-field em_size_field">	
 		<input type="radio" name="title_setting" id="title_setting1" value="hide" 
 		<?php
-		if ( $title_setting == 'hide' ) {
-			echo 'checked=checked';}
+		checked( $title_setting, 'hide' );
 		?>
 		>
 		<label for="title_setting1"><?php esc_html_e( 'Hide', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="title_setting" id="title_setting2" value="show" 
 		<?php
-		if ( $title_setting == 'show' ) {
-			echo 'checked=checked';}
+		checked( $title_setting, 'show' );
 		?>
 		>
 		<label for="title_setting2"><?php esc_html_e( 'Show', 'new-grid-gallery' ); ?></label>
@@ -349,29 +322,25 @@ $grid_gallery_id = esc_attr($post->ID);
 		<p class="switch-field em_size_field tfs">
 			<input type="radio" name="title_color" id="title_color1" value="white" 
 			<?php
-			if ( $title_color == 'white' ) {
-				echo 'checked=checked';}
+			checked( $title_color, 'white' );
 			?>
 			>
 			<label for="title_color1"><?php esc_html_e( 'White', 'new-grid-gallery' ); ?></label>
 			<input type="radio" name="title_color" id="title_color2" value="black" 
 			<?php
-			if ( $title_color == 'black' ) {
-				echo 'checked=checked';}
+			checked( $title_color, 'black' );
 			?>
 			>
 			<label for="title_color2"><?php esc_html_e( 'Black', 'new-grid-gallery' ); ?></label>
 			<input type="radio" name="title_color" id="title_color3" value="red" 
 			<?php
-			if ( $title_color == 'red' ) {
-				echo 'checked=checked';}
+			checked( $title_color, 'red' );
 			?>
 			>
 			<label for="title_color3"><?php esc_html_e( 'Red', 'new-grid-gallery' ); ?></label>
 			<input type="radio" name="title_color" id="title_color4" value="blue" 
 			<?php
-			if ( $title_color == 'blue' ) {
-				echo 'checked=checked';}
+			checked( $title_color, 'blue' );
 			?>
 			>
 			<label for="title_color4"><?php esc_html_e( 'Blue', 'new-grid-gallery' ); ?></label>
@@ -393,15 +362,13 @@ $grid_gallery_id = esc_attr($post->ID);
 	<p class="switch-field em_size_field">
 		<input type="radio" name="thumbnail_border" id="thumbnail_border1" value="hide" 
 		<?php
-		if ( $thumbnail_border == 'hide' ) {
-			echo 'checked=checked';}
+		checked( $thumbnail_border, 'hide' );
 		?>
 		>
 		<label for="thumbnail_border1"><?php esc_html_e( 'Hide', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="thumbnail_border" id="thumbnail_border2" value="show" 
 		<?php
-		if ( $thumbnail_border == 'show' ) {
-			echo 'checked=checked';}
+		checked( $thumbnail_border, 'show' );
 		?>
 		>
 		<label for="thumbnail_border2"><?php esc_html_e( 'Show', 'new-grid-gallery' ); ?></label>
@@ -422,15 +389,13 @@ $grid_gallery_id = esc_attr($post->ID);
 	<p class="switch-field em_size_field">
 		<input type="radio" name="no_spacing" id="no_spacing1" value="yes" 
 		<?php
-		if ( $no_spacing == 'yes' ) {
-			echo 'checked=checked';}
+		checked( $no_spacing, 'yes' );
 		?>
 		>
 		<label for="no_spacing1"><?php esc_html_e( 'Yes', 'new-grid-gallery' ); ?></label>
 		<input type="radio" name="no_spacing" id="no_spacing2" value="no" 
 		<?php
-		if ( $no_spacing == 'no' ) {
-			echo 'checked=checked';}
+		checked( $no_spacing, 'no' );
 		?>
 		>
 		<label for="no_spacing2"><?php esc_html_e( 'No', 'new-grid-gallery' ); ?></label>
@@ -710,35 +675,118 @@ jQuery(window).scroll(function() {
 	rangeSlider();
 </script>
 <br>
-<style>
-	.awp_bale_offer {
-		background-image: url("<?php echo esc_url( GG_PLUGIN_URL . '/img/awp-bale.jpg' ); ?>");
-		background-repeat:no-repeat;
-		padding:30px;
-	}
-	.awp_bale_offer h1 {
-		font-size:35px;
-		color:#FFFFFF;
-	}
-	.awp_bale_offer h3 {
-		font-size:25px;
-		color:#FFFFFF;
-	}
-</style>
-<div class="row awp_bale_offer">
-	<div class="col-md-6">
-		<h1><?php esc_html_e( 'Plugin Bale Offer', 'new-grid-gallery' ); ?></h1>
-		<h3><?php esc_html_e( 'Get All Premium Plugin - 23+ Premium Plugins ( Personal Licence) in just $179', 'new-grid-gallery' ); ?> </h3>
-		<h4> <?php esc_html_e( '8+ gallery plugins, 3+ Slider Plugin , Event , Testimonial , Contact Form, Social media, Popup Box, Weather Effect, Social share', 'new-grid-gallery' ); ?> </h4>
-		<h3><strike><?php esc_html_e( '$349', 'new-grid-gallery' ); ?></strike> <?php esc_html_e( 'For $179 Only', 'new-grid-gallery' ); ?></h3>
-	</div>
-	<div class="col-md-6">
-		<a href="https://awplife.com/account/signup/all-premium-plugins" target="_blank" class="button button-primary button-hero load-customize hide-if-no-customize"><?php esc_html_e( 'BUY NOW', 'new-grid-gallery' ); ?></a>
-	</div>
-</div>
-<p class="">
-	<br>
+<p class="" style="margin-top: 25px;">
 	<a href="https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/" target="_blank" class="button button-primary button-hero load-customize hide-if-no-customize"><?php esc_html_e( 'Premium Version Details', 'new-grid-gallery' ); ?></a>
 	<a href="https://awplife.com/demo/grid-gallery-premium/" target="_blank" class="button button-primary button-hero load-customize hide-if-no-customize"><?php esc_html_e( 'Check Live Demo', 'new-grid-gallery' ); ?></a>
 	<a href="https://awplife.com/demo/grid-gallery-premium-admin-demo/" target="_blank" class="button button-primary button-hero load-customize hide-if-no-customize"><?php esc_html_e( 'Try Admin Demo', 'new-grid-gallery' ); ?></a>
 </p>
+<br>
+<style>
+	.awp_bale_offer {
+		background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+		border-radius: 12px;
+		padding: 40px;
+		color: #ffffff;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+		margin-top: 30px;
+		margin-bottom: 30px;
+		position: relative;
+		overflow: hidden;
+	}
+	.awp_bale_offer::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -50%;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 80%);
+		pointer-events: none;
+	}
+	.awp_bale_offer h1 {
+		font-size: 38px;
+		font-weight: 800;
+		color: #ffffff;
+		margin-top: 0;
+		margin-bottom: 10px;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+		letter-spacing: -0.5px;
+	}
+	.awp_bale_offer h3 {
+		font-size: 22px;
+		font-weight: 600;
+		color: #ffe066;
+		margin-top: 0;
+		margin-bottom: 15px;
+		text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
+	.awp_bale_offer h4 {
+		font-size: 16px;
+		font-weight: 400;
+		color: #e0e6ed;
+		line-height: 1.6;
+		margin-bottom: 25px;
+	}
+	.awp_bale_offer .strike-price {
+		font-size: 20px;
+		text-decoration: line-through;
+		color: #cbd5e1;
+		margin-right: 10px;
+	}
+	.awp_bale_offer .final-price {
+		font-size: 28px;
+		font-weight: 800;
+		color: #4ade80;
+	}
+	.awp_bale_offer_btn {
+		background: #ffffff !important;
+		color: #1e3c72 !important;
+		border: none !important;
+		border-radius: 30px !important;
+		padding: 15px 35px !important;
+		font-size: 18px !important;
+		font-weight: 700 !important;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3) !important;
+		transition: all 0.3s ease !important;
+		display: inline-block;
+		text-decoration: none;
+	}
+	.awp_bale_offer_btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4) !important;
+		background: #f8fafc !important;
+	}
+	.awp_bale_badge {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: #f43f5e;
+		color: white;
+		padding: 6px 15px;
+		border-radius: 20px;
+		font-weight: 700;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	}
+</style>
+<div class="awp_bale_offer">
+	<div class="awp_bale_badge"><?php esc_html_e( 'Special Deal', 'new-grid-gallery' ); ?></div>
+	<div style="max-width: 65%;">
+		<h1><?php esc_html_e( 'Plugin Bale Offer', 'new-grid-gallery' ); ?></h1>
+		<h3><?php esc_html_e( 'Get All 23+ Premium Plugins in just $149', 'new-grid-gallery' ); ?></h3>
+		<h4><?php esc_html_e( 'Includes 8+ gallery plugins, 3+ Slider Plugins, Event, Testimonial, Contact Form, Social Media, Popup Box, Weather Effect, Social Share, and more!', 'new-grid-gallery' ); ?></h4>
+		<p>
+			<span class="strike-price"><?php esc_html_e( '$349', 'new-grid-gallery' ); ?></span>
+			<span class="final-price"><?php esc_html_e( '$149  Only', 'new-grid-gallery' ); ?></span>
+		</p>
+	</div>
+	<div style="position: absolute; right: 40px; bottom: 40px;">
+		<a href="https://awplife.com/account/signup/all-premium-plugins" target="_blank" class="awp_bale_offer_btn"><?php esc_html_e( 'BUY NOW', 'new-grid-gallery' ); ?></a>
+	</div>
+</div>
+
+

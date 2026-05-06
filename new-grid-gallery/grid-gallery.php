@@ -7,10 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 Plugin Name: New Grid Gallery
 Plugin URI: https://awplife.com/wodpress-plugins/grid-gallery-premium/
 Description: Grid gallery plugin with preview for WordPress
-Version: 1.5.4
+Version: 1.5.5
 Author: A WP Life
 Author URI: https://awplife.com/
-Text Domain: GGP_TXTDM
+Text Domain: new-grid-gallery
 License: GPLv2 or later
 Domain Path: /languages
 */
@@ -26,10 +26,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 
 		protected function _constants() {
 			// Plugin Version
-			define( 'GG_PLUGIN_VER', '1.5.4' );
-
-			// Plugin Text Domain
-			define( 'GGP_TXTDM', 'new-grid-gallery' );
+			define( 'GG_PLUGIN_VER', '1.5.5' );
 
 			// Plugin Name
 			define( 'GG_PLUGIN_NAME', 'New Grid Gallery' );
@@ -64,9 +61,6 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			// add gallery menu item, change menu filter for multisite
 			add_action( 'admin_menu', array( $this, '_Grid_Menu' ), 65 );
 
-			// add gallery menu item, change menu filter for multisite
-			add_action( 'admin_menu', array( $this, '_Featured_Plugins_Grid_Menu' ), 68 );
-
 			// Create grid Gallery Custom Post
 			add_action( 'init', array( $this, '_Grid_Gallery' ) );
 
@@ -78,7 +72,6 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			add_action( 'save_post', array( &$this, '_gg_save_settings' ) );
 
 			// Shortcode Compatibility in Text Widgets
-			add_filter( 'widget_text', 'do_shortcode' );
 
 			// add pfg cpt shortcode column - manage_{$post_type}_posts_columns
 			add_filter( 'manage_grid_gallery_posts_columns', array( &$this, 'set_grid_gallery_shortcode_column_name' ) );
@@ -97,7 +90,6 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		// Grid Gallery cpt shortcode column before date columns
 		public function set_grid_gallery_shortcode_column_name( $defaults ) {
 			$new       = array();
-			$shortcode = $columns['grid_gallery_shortcode'];  // save the tags column
 			unset( $defaults['tags'] );   // remove it from the columns list
 
 			foreach ( $defaults as $key => $value ) {
@@ -114,20 +106,8 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			switch ( $column ) {
 				case 'grid_gallery_shortcode':
 					echo "<input type='text' class='button button-primary' id='grid-gallery-shortcode-" . esc_attr( $post_id ) . "' value='[GGAL id=" . esc_attr( $post_id ) . "]' style='font-weight:bold; background-color:#32373C; color:#FFFFFF; text-align:center;' />";
-					echo "<input type='button' class='button button-primary' onclick='return GRIDCopyShortcode" . esc_attr( $post_id ) . "();' readonly value='Copy' style='margin-left:4px;' />";
+					echo "<input type='button' class='button button-primary' onclick='return GRIDCopyShortcode(" . esc_attr( $post_id ) . ");' readonly value='Copy' style='margin-left:4px;' />";
 					echo "<span id='copy-msg-" . esc_attr( $post_id ) . "' class='button button-primary' style='display:none; background-color:#32CD32; color:#FFFFFF; margin-left:4px; border-radius: 4px;'>copied</span>";
-					echo '<script>
-						function GRIDCopyShortcode' . esc_attr( $post_id ) . "() {
-							var copyText = document.getElementById('grid-gallery-shortcode-" . esc_attr( $post_id ) . "');
-							copyText.select();
-							document.execCommand('copy');
-							
-							//fade in and out copied message
-							jQuery('#copy-msg-" . esc_attr( $post_id ) . "').fadeIn('1000', 'linear');
-							jQuery('#copy-msg-" . esc_attr( $post_id ) . "').fadeOut(2500,'swing');
-						}
-						</script>
-					";
 					break;
 			}
 		}
@@ -138,13 +118,19 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 
 		public function _Grid_Menu() {
 			$help_menu = add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Docs', 'new-grid-gallery' ), __( 'Docs', 'new-grid-gallery' ), 'administrator', 'sr-doc-page', array( $this, '_gg_doc_page' ) );
+			add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Our Plugins', 'new-grid-gallery' ), __( 'Our Plugins', 'new-grid-gallery' ), 'administrator', 'sr-plugins-page', array( $this, '_gg_plugins_page' ) );
+			add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Our Themes', 'new-grid-gallery' ), __( 'Our Themes', 'new-grid-gallery' ), 'administrator', 'sr-themes-page', array( $this, '_gg_themes_page' ) );
 		}
 
-		public function _Featured_Plugins_Grid_Menu() {
-			$help_menu       = add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Featured Plugins', 'new-grid-gallery' ), __( 'Featured Plugins', 'new-grid-gallery' ), 'administrator', 'sr-featured-plugins-page', array( $this, '_gg_featured_plugins' ) );
-			$buy_plugin_menu = add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Upgrade Plugin', 'new-grid-gallery' ), __( 'Upgrade Plugin', 'new-grid-gallery' ), 'administrator', 'sr-upgrade-plugins-page', array( $this, '_gg_upgrade_plugins' ) );
-			$theme_menu      = add_submenu_page( 'edit.php?post_type=' . GG_PLUGIN_SLUG, __( 'Our Theme', 'new-grid-gallery' ), __( 'Our Theme', 'new-grid-gallery' ), 'administrator', 'sr-theme-page', array( $this, '_gg_theme_page' ) );
+		public function _gg_plugins_page() {
+			require_once 'our-plugins.php';
 		}
+
+		public function _gg_themes_page() {
+			require_once 'our-themes.php';
+		}
+
+
 
 		/**
 		 * Grid Gallery Custom Post
@@ -299,9 +285,9 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			$gg_slide_alt   = $slide_alt = get_post_meta( $id, '_wp_attachment_image_alt', true );
 			?>
 			<li class="slide">
-				<img class="new-slide" src="<?php echo esc_url( $thumbnail[0] ); ?>" alt="<?php echo esc_html( $gg_slide_alt ); ?>" style="height: 150px; width: 98%; border-radius: 8px;">
+				<img class="new-slide" src="<?php echo esc_url( $thumbnail[0] ); ?>" alt="<?php echo esc_attr( $gg_slide_alt ); ?>" style="height: 150px; width: 98%; border-radius: 8px;">
 				<input type="hidden" id="slide-ids[]" name="slide-ids[]" value="<?php echo esc_attr( $id ); ?>" />
-				<input type="text" name="slide-title[]" id="slide-title[]" style="width: 100%;" placeholder="Image Title" value="<?php echo esc_html( $gg_slide_title ); ?>">
+				<input type="text" name="slide-title[]" id="slide-title[]" style="width: 100%;" placeholder="Image Title" value="<?php echo esc_attr( $gg_slide_title ); ?>">
 				<input type="button" name="remove-slide" id="remove-slide" style="width: 100%;" class="button" value="Delete">
 			</li>
 			<?php
@@ -310,12 +296,14 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		public function _ajax_grid_gallery() {
 			if (current_user_can('manage_options')) {
 				if (isset($_POST['ggp_add_images_nonce']) && wp_verify_nonce($_POST['ggp_add_images_nonce'], 'ggp_add_images')) {
-					echo esc_attr($this->_gg_ajax_callback_function($_POST['slideId']));
+					$this->_gg_ajax_callback_function( intval( $_POST['slideId'] ) );
+					wp_die();
 				} else {
 					print 'Sorry, your nonce did not verify.';
-					exit;
+					wp_die();
 				}
 			}
+			wp_die();
 		}
 		
 
@@ -323,18 +311,18 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			if (current_user_can('manage_options')) {
 				if ( isset( $_POST['gg_save_nonce'] ) ) {
 					if ( isset( $_POST['gg_save_nonce'] ) && wp_verify_nonce( $_POST['gg_save_nonce'], 'gg_save_settings' ) ) {
-						$gal_thumb_size          = sanitize_text_field( $_POST['gal_thumb_size'] );
-						$animation_speed         = sanitize_text_field( $_POST['animation_speed'] );
-						$image_hover_effect_type = sanitize_text_field( $_POST['image_hover_effect_type'] );
-						$image_hover_effect_four = sanitize_text_field( $_POST['image_hover_effect_four'] );
-						$scroll_loading          = sanitize_text_field( $_POST['scroll_loading'] );
-						$nbp_setting2            = sanitize_text_field( $_POST['nbp_setting2'] );
-						$thumb_title             = sanitize_text_field( $_POST['thumb_title'] );
-						$title_setting           = sanitize_text_field( $_POST['title_setting'] );
-						$title_color             = sanitize_text_field( $_POST['title_color'] );
-						$thumbnail_border        = sanitize_text_field( $_POST['thumbnail_border'] );
-						$no_spacing              = sanitize_text_field( $_POST['no_spacing'] );
-						$custom_css              = sanitize_textarea_field( $_POST['custom-css'] );
+						$gal_thumb_size          = isset($_POST['gal_thumb_size']) ? sanitize_text_field( $_POST['gal_thumb_size'] ) : '';
+						$animation_speed         = isset($_POST['animation_speed']) ? sanitize_text_field( $_POST['animation_speed'] ) : '';
+						$image_hover_effect_type = isset($_POST['image_hover_effect_type']) ? sanitize_text_field( $_POST['image_hover_effect_type'] ) : '';
+						$image_hover_effect_four = isset($_POST['image_hover_effect_four']) ? sanitize_text_field( $_POST['image_hover_effect_four'] ) : '';
+						$scroll_loading          = isset($_POST['scroll_loading']) ? sanitize_text_field( $_POST['scroll_loading'] ) : '';
+						$nbp_setting2            = isset($_POST['nbp_setting2']) ? sanitize_text_field( $_POST['nbp_setting2'] ) : '';
+						$thumb_title             = isset($_POST['thumb_title']) ? sanitize_text_field( $_POST['thumb_title'] ) : '';
+						$title_setting           = isset($_POST['title_setting']) ? sanitize_text_field( $_POST['title_setting'] ) : '';
+						$title_color             = isset($_POST['title_color']) ? sanitize_text_field( $_POST['title_color'] ) : '';
+						$thumbnail_border        = isset($_POST['thumbnail_border']) ? sanitize_text_field( $_POST['thumbnail_border'] ) : '';
+						$no_spacing              = isset($_POST['no_spacing']) ? sanitize_text_field( $_POST['no_spacing'] ) : '';
+						$custom_css              = isset($_POST['custom-css']) ? sanitize_textarea_field( $_POST['custom-css'] ) : '';
 						$i                       = 0;
 						$image_ids               = array();
 						$image_titles            = array();
@@ -342,8 +330,8 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 						$image_ids_val           = array_map( 'sanitize_text_field', $image_ids_val );
 
 						foreach ( $image_ids_val as $image_id ) {
-							$image_ids[]         = sanitize_text_field( $_POST['slide-ids'][ $i ] );
-							$image_titles[]      = sanitize_text_field( $_POST['slide-title'][ $i ] );
+							$image_ids[]         = isset( $_POST['slide-ids'][ $i ] ) ? sanitize_text_field( $_POST['slide-ids'][ $i ] ) : '';
+							$image_titles[]      = isset( $_POST['slide-title'][ $i ] ) ? sanitize_text_field( $_POST['slide-title'][ $i ] ) : '';
 							$single_image_update = array(
 								'ID'         => $image_id,
 								'post_title' => $image_titles[ $i ],
@@ -384,18 +372,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			require_once 'docs.php';
 		}
 
-		public function _gg_featured_plugins() {
-			require_once 'featured-plugins/featured-plugins.php';
-		}
 
-		public function _gg_upgrade_plugins() {
-			require_once 'buy-grid-gallery-premium.php';
-		}
-
-		// theme page
-		public function _gg_theme_page() {
-			require_once 'our-theme/awp-theme.php';
-		}
 
 	} // end of class
 
@@ -412,30 +389,36 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		wp_register_style( 'gg-font-awesome-css', plugin_dir_url( __FILE__ ) . 'css/font-awesome.css' );
 		// css & JS
 	}
-		add_action( 'wp_enqueue_scripts', 'awplife_ggp_register_scripts' );
+	add_action( 'wp_enqueue_scripts', 'awplife_ggp_register_scripts' );
 
-	// Plugin Recommend
-		add_action( 'tgmpa_register', 'GGP_TXTDM_plugin_recommend' );
-	function GGP_TXTDM_plugin_recommend() {
-		$plugins = array(
-			array(
-				'name'     => 'Photo Gallery',
-				'slug'     => 'new-photo-gallery',
-				'required' => false,
-			),
-			array(
-				'name'     => 'Responsive Slider Gallery',
-				'slug'     => 'responsive-slider-gallery',
-				'required' => false,
-			),
-			array(
-				'name'     => 'Testimonial',
-				'slug'     => 'testimonial-maker',
-				'required' => false,
-			),
-		);
-		tgmpa( $plugins );
+	function awplife_gg_admin_enqueue_scripts( $hook ) {
+		if ( isset( $_GET['page'] ) && ( 'sr-plugins-page' === $_GET['page'] || 'sr-themes-page' === $_GET['page'] ) ) {
+			wp_enqueue_style( 'awl-our-plugins-style', GG_PLUGIN_URL . 'css/our-plugins-style.css' );
+		}
+		if ( 'edit.php' === $hook && isset( $_GET['post_type'] ) && 'grid_gallery' === $_GET['post_type'] ) {
+			wp_enqueue_script( 'jquery' );
+			wp_add_inline_script( 'jquery', "function GRIDCopyShortcode(post_id) {
+				var copyText = document.getElementById('grid-gallery-shortcode-' + post_id);
+				copyText.select();
+				document.execCommand('copy');
+				jQuery('#copy-msg-' + post_id).fadeIn('1000', 'linear').fadeOut(2500,'swing');
+			}" );
+		}
+		if ( 'post.php' != $hook && 'post-new.php' != $hook ) {
+			return;
+		}
+		global $post;
+		if ( 'grid_gallery' !== $post->post_type ) {
+			return;
+		}
+		wp_enqueue_style( 'awl-toogle-button-css', GG_PLUGIN_URL . 'css/toogle-button.css' );
+		wp_enqueue_style( 'awl-bootstrap-css', GG_PLUGIN_URL . 'css/bootstrap.css' );
+		wp_enqueue_style( 'awl-font-awesome-css', GG_PLUGIN_URL . 'css/font-awesome.css' );
+		wp_enqueue_script( 'awl-bootstrap-js', GG_PLUGIN_URL . 'js/bootstrap.min.js' );
 	}
+	add_action( 'admin_enqueue_scripts', 'awplife_gg_admin_enqueue_scripts' );
+
+
 
 
 	/**
@@ -443,6 +426,5 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 	 */
 	$gg_gallery_object = new Awl_Grid_Gallery();
 	require_once 'grid-gallery-shortcode.php';
-	require_once 'class-tgm-plugin-activation.php';
 } // end of class exists
 ?>

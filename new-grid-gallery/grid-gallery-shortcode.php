@@ -15,6 +15,10 @@ function awl_grid_gallery_shortcode( $post_id ) {
 	wp_enqueue_script( 'awl-gg-bootstrap-js' );
 	wp_enqueue_script( 'awl-gridder-js' );
 
+	$post_id = shortcode_atts( array( 'id' => 0 ), $post_id );
+	if ( empty( $post_id['id'] ) ) {
+		return '';
+	}
 	// unsterilized	
 	$gg_settings     = get_post_meta( $post_id['id'], 'awl_gg_settings_' . $post_id['id'], true );
 	
@@ -263,7 +267,7 @@ function awl_grid_gallery_shortcode( $post_id ) {
 		padding-left: 15px !important;
 		padding-right: 24px !important;
 	}
-	<?php echo $custom_css; ?>
+	<?php echo wp_strip_all_tags( $custom_css ); ?>
 	</style>
 	<?php
 	// load without lightbox gallery output
