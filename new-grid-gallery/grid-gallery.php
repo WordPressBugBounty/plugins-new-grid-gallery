@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Plugin Name: New Grid Gallery
  * Plugin URI: https://awplife.com/
  * Description: Grid gallery plugin with preview for WordPress.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: A WP Life
  * Author URI: https://awplife.com/
  * Text Domain: new-grid-gallery
@@ -24,7 +24,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		
 		protected function _constants() {
 			//Plugin Version
-			define( 'GG_PLUGIN_VER', '2.0.0' );
+			define( 'GG_PLUGIN_VER', '2.0.1' );
 			
 			//Plugin Text Domain
 			define("GGP_TXTDM","new-grid-gallery" );

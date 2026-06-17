@@ -6,7 +6,7 @@
     var ServerSideRender = wp.serverSideRender || wp.components.ServerSideRender;
 
     registerBlockType('new-grid-gallery/gallery-select', {
-        title: 'Grid Gallery Premium',
+        title: 'Grid Gallery',
         icon: 'grid-view',
         category: 'common',
         attributes: {

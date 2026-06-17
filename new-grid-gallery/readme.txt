@@ -4,7 +4,7 @@ Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,14 +62,20 @@ https://www.youtube.com/watch?v=GusIaoInRJQ
 
 = Pro Features =
 
-Get even more options with our premium version:
+Unlock the full potential of your galleries with our premium version:
 
-* Six beautiful column layout configurations for any page width.
-* Twenty creative hover effects including slide, zoom, and background color overlays.
-* Twenty-five advanced easing animations for smooth, professional image expansion.
-* Direct external linking to connect gallery images to specific URLs or landing pages.
-* Infinite scroll and "Load More" pagination to manage high-volume image libraries.
-* Complete color and typography customization for titles, descriptions, and buttons.
+* **Global Settings Dashboard:** Configure lazy loading, shimmering skeleton screens, global custom CSS sandbox editing, and bulk import/export panel options globally across all galleries.
+* **Inline Video Embedding:** Embed YouTube, Vimeo, and local MP4 videos inside the preview panel with platform-branded hover play buttons.
+* **Device Responsive Columns:** Define separate grid column distributions for Desktop, Tablet, and Mobile viewports for perfect responsiveness.
+* **Custom CSS Sandbox:** Inject custom CSS codes directly in settings to overwrite layouts without losing edits on plugin updates.
+* **Skeleton Shimmer Loads:** Display high-fidelity shimmering skeleton loader frames on thumbnail grid layout blocks during initialization.
+* **Load More AJAX Pagination:** Split image load lists into pages with a customizable, animated AJAX Load More button.
+* **Bulk JSON Import & Export:** Migrate layouts effortlessly. Export configurations as JSON files and import them to restore settings on any other site.
+* **One-Click Gallery Duplicator:** Instantly duplicate any gallery layout, configuration settings, and enqueued image lists from the dashboard.
+* **6 Premium Aspect Crop Ratios:** Unlock 6 crop shapes (1:1 Square, 4:3 Classic, 16:9 Widescreen, 3:2 Photo, 2:3 Portrait, and 3:4 Portrait).
+* **20+ Creative Hover Animations:** Advanced 2D, shadow, grow, shrink, and glow transitions.
+* **Frosted Glassmorphism Overlay:** Enable modern frosted glass design on detail panels/overlays with custom color filters.
+* **Transient Performance Caching:** Auto-caches HTML layouts inside database transients to guarantee lightning-fast rendering.
 
 **More Pro Demo Examples**
 
@@ -131,7 +137,12 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Changelog ==
 
-= 2.0.4 =
+= 2.0.1 =
+* Date: 17 June 2026
+* Updated gallery navigation SVG icons for better visibility.
+* Fixed incorrect 'Premium' branding in Elementor and Gutenberg widgets.
+
+= 2.0.0 =
 * Date: 17 June 2026
 * Reorganized and restructured into a **New Settings Panel Layout**, relocating key configurations (Loading Icon and Thumbnail Spacing) for a cleaner workflow.
 * Added native **Gutenberg Block** support to easily select and insert grid galleries directly in the default block editor.
@@ -167,7 +178,10 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Upgrade Notice ==
 
-= 2.0.4 =
+= 2.0.1 =
+Minor UI tweaks and branding fixes. Recommended update.
+
+= 2.0.0 =
 Upgrading from v1.5.5 introduces a brand new settings panel layout, major builder integrations (Gutenberg Block, Elementor Widget, and Shortcode Copying Helper), and a completely optimized assets architecture. The old bulky Bootstrap framework files have been removed in favor of clean custom styling, improving loading speed and performance. Update recommended.
 
 = 1.5.5 =

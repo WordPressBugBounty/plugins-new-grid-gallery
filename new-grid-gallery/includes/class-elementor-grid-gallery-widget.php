@@ -8,7 +8,7 @@ class Elementor_Grid_Gallery_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_title() {
-		return esc_html__( 'Grid Gallery Premium', 'new-grid-gallery' );
+		return esc_html__( 'Grid Gallery', 'new-grid-gallery' );
 	}
 
 	public function get_icon() {
