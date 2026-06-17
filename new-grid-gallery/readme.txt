@@ -2,9 +2,9 @@
 Contributors: aWordPresslife, razipathhan, hanif0991, muhammadshahid, fkfaisalkhan007, sharikkhan007, zishlife, FARAZFRANK
 Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
-Requires at least: 3.8
-Tested up to: 6.9
-Stable tag: 1.5.5
+Requires at least: 5.0
+Tested up to: 7.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Create a beautiful Photo Gallery, Image Gallery, or Portfolio on your website. U
 
 == Description ==
 
-Do you want to show your images in a clean grid? This plugin helps you create a stunning Photo Gallery, Image Gallery, or design Portfolio. 
+Do you want to show your images in a clean grid? This plugin helps you create a stunning Photo Gallery, Image Gallery, or design Portfolio. It is fully integrated with a native **Gutenberg Block** and a dedicated **Elementor Widget**, allowing you to insert and customize your grids directly within your preferred editor without copying and pasting shortcodes.
 
 Showcase your photographs, design projects, and business assets with high-performance grids. Traditional galleries use pop-ups that hurt user experience. Grid Gallery expands clicked images inside the page layout itself. This keeps your visitors focused, engaged, and reading your content longer.
 
@@ -31,6 +31,7 @@ https://www.youtube.com/watch?v=GusIaoInRJQ
 = Why Choose Grid Gallery? =
 
 * **Seamless Inline Previews:** Users browse full-sized images directly within the grid structure without launching separate windows.
+* **Gutenberg & Elementor Ready:** Select and insert your galleries using our native Gutenberg Block or dedicated Elementor Widget inside your preferred editor layouts.
 * **SEO-Optimized Image Loading:** Built to load assets quickly, which boosts search engine rankings and keeps users happy.
 * **Touch-Enabled Mobile Sliders:** Mobile visitors swipe through your gallery easily with fluid, finger-friendly touch navigation gestures.
 * **Clean HTML5 Architecture:** Coded strictly with semantic standards to match any premium or custom WordPress theme effortlessly.
@@ -39,16 +40,25 @@ https://www.youtube.com/watch?v=GusIaoInRJQ
 
 * Organize your photos into unlimited customized collections for different pages.
 * Upload multiple images simultaneously using the built-in WordPress media library interface.
-* Copy and paste simple shortcodes to display grids on pages, posts, or widgets.
+* Copy and paste simple shortcodes, or use the native Gutenberg Block and Elementor Widget to display grids on pages, posts, or widgets.
 * Customize grid columns, animation speeds, hover styles, and thumbnail borders.
 
 = Free Features =
 
-* Fluid responsive design that adapts perfectly to desktop, tablet, and mobile screens.
-* Three unique hover styles including shadow outset and float animations.
-* Show or hide custom image titles inside the grid overlays.
-* Customizable animation transition speeds from 100ms to 2000ms.
-* Clean custom CSS input box to safely override default plugin styles.
+* **Grid Columns & Layout:** Customize columns (up to 6 columns) to fit any screen resolution.
+* **Image Source Quality:** Select WordPress media resolutions (Thumbnail, Medium, Large, or Full Size) to optimize loading speed.
+* **Grid Crop Shape (Aspect Ratio):** Choose 1:1 Square or 4:3 Classic grid cropping.
+* **Spacing & Frames:** Toggle item spacing (gaps) and padded frame containers for thumbnails.
+* **Hover Animation Styles:** Select between 5 unique hover transitions (Grow, Shrink, Float Shadow, Shadow Radial, Box Shadow Outset).
+* **Gallery Loading Spinner:** Customize spinner styles (Spinner, Pulse, Dots, or disabled) and apply custom loading brand colors.
+* **Thumbnail Sort Order:** Display images chronologically (Oldest First, Newest First) or in Randomized order.
+* **Text Overlay & Detail Panel:** Show titles on thumbnails, display titles in the active preview drawer with customizable font size (range slider) and custom title color.
+* **EXIF Camera Data:** Automatically extract and show camera metadata (ISO, Shutter speed, Aperture, and Lens) inside the expanded detail drawer.
+* **Expanded Navigation Drawer:** Custom open/close transition speed (0ms to 20000ms) and select from 26 transition easing curve equations.
+* **Clickable Link Actions:** Configure "Read More" hyperlinks and link opening behavior (New Tab vs Same Tab).
+* **Gutenberg Block Integration:** Seamlessly select and insert grid galleries using the native editor block.
+* **Elementor Widget Support:** Easily drag and drop grid galleries inside the Elementor page builder.
+
 
 = Pro Features =
 
@@ -82,7 +92,7 @@ Get even more options with our premium version:
 
 = How do I create a new Photo Gallery, Image Gallery, or Portfolio? =
 
-Navigate to the "Grid Gallery" menu in your WordPress dashboard and click "Add New." Upload your images using the uploader, choose your desired columns and animation speeds in the settings panel below, and click Publish. Copy the generated shortcode and paste it directly into your post, page, or page builder text element.
+Navigate to the "Grid Gallery" menu in your WordPress dashboard and click "Add New." Upload your images using the uploader, choose your desired columns and animation speeds in the settings panel below, and click Publish. You can display the gallery by copying and pasting the generated shortcode, or by selecting the gallery directly using the Gutenberg block or Elementor widget.
 
 = Can I use this for a design Portfolio? =
 
@@ -98,7 +108,7 @@ Yes. You can add unique titles and descriptions to each uploaded image. You have
 
 = Does it work with page builders? =
 
-Yes, it is fully compatible with major page builders like Elementor, Divi, Beaver Builder, and the standard Gutenberg block editor. Simply paste the gallery shortcode into any text or HTML block.
+Yes, it is fully compatible with major page builders and editors. It includes a native **Gutenberg Block** for the default block editor and a dedicated **Elementor Widget** for the Elementor page builder. For other builders like Divi or Beaver Builder, you can simply paste the gallery shortcode into any text, code, or HTML block.
 
 = Can I link photos to other pages? =
 
@@ -110,16 +120,25 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Screenshots ==
 
-1. Colorful grid gallery display
-2. Opened image preview
-3. Gallery with multiple images
-4. Single image preview mode
-5. Grid styling with custom border
-6. Gallery without titles
-7. Hover effect on mouse over
-8. Navigation controls
+1. Add Image Panel
+2. Thumbnail Layout Options
+3. Text And Overlay Options
+4. Full Image Drawer Options
+5. Gallery Frontend Without Spacing and Frame
+6. Gallery Frontend Without Spacing and Frame, Image Drawer
+7. Gallery Frontend With Spacing and Frame
+8. Gallery Frontend With Spacing and Frame, Image Drawer
 
 == Changelog ==
+
+= 2.0.4 =
+* Date: 17 June 2026
+* Reorganized and restructured into a **New Settings Panel Layout**, relocating key configurations (Loading Icon and Thumbnail Spacing) for a cleaner workflow.
+* Added native **Gutenberg Block** support to easily select and insert grid galleries directly in the default block editor.
+* Added a dedicated **Elementor Widget** integration to drag and drop grid galleries inside the Elementor page builder.
+* Added a one-click **Shortcode Copying Helper** in the admin gallery post listing table columns for easier copy-pasting.
+* Completely removed the old **Bootstrap framework architecture** (`bootstrap.css`, `gg-bootstrap.css`, and `bootstrap.min.js`) to prevent layout conflicts and eliminate script bloat.
+* Re-coded and **optimized CSS and JS files for fast loading**, significantly reducing asset size and improving page rendering speeds.
 
 = 1.5.5 =
 * 2026-6-05
@@ -147,6 +166,9 @@ You can ask questions on our support forum. We are happy to help you.
 * Tested with WordPress 6.7.2
 
 == Upgrade Notice ==
+
+= 2.0.4 =
+Upgrading from v1.5.5 introduces a brand new settings panel layout, major builder integrations (Gutenberg Block, Elementor Widget, and Shortcode Copying Helper), and a completely optimized assets architecture. The old bulky Bootstrap framework files have been removed in favor of clean custom styling, improving loading speed and performance. Update recommended.
 
 = 1.5.5 =
 Added support for "Our Plugins" and "Our Themes" submenu pages with secure cache refresh and modern responsive designs. Update recommended for all users.
