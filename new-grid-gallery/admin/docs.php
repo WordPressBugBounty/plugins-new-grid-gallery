@@ -371,6 +371,50 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 .awl-btn-premium:active {
     transform: translateY(-1px);
 }
+
+.awl-btn-rating {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+}
+
+.awl-btn-rating:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+}
+
+.awl-btn-rating:active {
+    transform: translateY(-1px);
+}
+
+.awl-btn-upgrade {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.awl-btn-upgrade:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
+}
+
+.awl-btn-upgrade:active {
+    transform: translateY(-1px);
+}
 </style>
 
 <div class="wrap">
@@ -412,7 +456,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                 <div class="awl-tutorial-badge">2</div>
                 <div class="awl-tutorial-content">
                     <h3>Configure Settings</h3>
-                    <p>Scroll down to the settings panel. Here you can configure the number of grid columns, choose crop shapes (aspect ratio), select hover animation styles, set the sort order, choose custom easing curves, change title font size/color, and enable camera EXIF technical metadata. Click <strong>Publish</strong> to save your gallery.</p>
+                    <p>Scroll down to the settings panel. Here you can configure the number of grid columns, choose crop shapes (aspect ratio), select hover animation styles, set the sort order, choose custom easing curves, change title font size/color, enable camera EXIF technical metadata, and activate Right Click Protection to prevent image dragging and stealing. Click <strong>Publish</strong> to save your gallery.</p>
                 </div>
             </div>
 
@@ -484,6 +528,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                             <div class="awl-sub-detail">
                                 <h5>Show Spacing (Gaps)</h5>
                                 <p>Toggle grid spacing to enable or disable margins and padding between thumbnails, creating either bordered grids or gapless mosaics.</p>
+                            </div>
+                        </li>
+                        <li class="awl-setting-sub-item">
+                            <i class="fa-solid fa-circle-dot"></i>
+                            <div class="awl-sub-detail">
+                                <h5>Right Click Protection</h5>
+                                <p>Toggle or install Right Click Protection to secure gallery images from context menu copy, save, and dragging theft.</p>
                             </div>
                         </li>
                     </ul>
@@ -649,8 +700,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
         </div>
 
         <!-- CTA Live Demo Section -->
-        <div class="awl-cta-section">
-            <a href="https://awplife.com/demo/grid-gallery-premium/" target="_blank" class="awl-btn-premium">Check Grid Gallery Premium Live Demo</a>
+        <div class="awl-cta-section" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="https://awplife.com/demo/grid-gallery-premium/" target="_blank" class="awl-btn-premium">
+                <i class="fa-solid fa-eye" style="margin-right: 8px;"></i><?php esc_html_e('Check Live Demo', 'new-grid-gallery'); ?>
+            </a>
+            <a href="https://wordpress.org/support/plugin/new-grid-gallery/reviews/" target="_blank" class="awl-btn-rating">
+                <i class="fa-solid fa-star" style="margin-right: 8px;"></i><?php esc_html_e('Rate Our Plugin', 'new-grid-gallery'); ?>
+            </a>
+            <a href="https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/" target="_blank" class="awl-btn-upgrade">
+                <i class="fa-solid fa-rocket" style="margin-right: 8px;"></i><?php esc_html_e('Upgrade to Premium', 'new-grid-gallery'); ?>
+            </a>
         </div>
 
     </div>

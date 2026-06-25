@@ -190,6 +190,59 @@ $grid_gallery_id = esc_attr($post->ID);
 			</div>
 
 		</div>
+
+		<!-- Card 4: Right Click Protection -->
+		<div class="awl-gg-card gg-card-compact">
+			<h3><?php esc_html_e('Right Click Protection', 'new-grid-gallery'); ?></h3>
+			
+			<div class="awl-gg-setting-row">
+				<div class="awl-gg-setting-label">
+					<h4><span class="dashicons dashicons-lock"></span> <?php esc_html_e('Right Click Protection', 'new-grid-gallery'); ?></h4>
+					<p><?php esc_html_e('If you want to disable right click and image dragging on your site, we have a dedicated plugin for it. Just install and use it.', 'new-grid-gallery'); ?></p>
+				</div>
+				<div class="awl-gg-setting-field">
+					<?php
+					$rcb_plugin = 'right-click-disable-or-ban/right-click-disable-or-ban.php';
+					if ( ! function_exists( 'is_plugin_active' ) ) {
+						require_once ABSPATH . 'wp-admin/includes/plugin.php';
+					}
+					$is_rcb_installed = file_exists(WP_PLUGIN_DIR . '/' . $rcb_plugin);
+					$is_rcb_active = $is_rcb_installed && is_plugin_active($rcb_plugin);
+
+					if ($is_rcb_active) : ?>
+						<div class="rcb-status-container" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+							<div style="display: inline-flex; align-items: center; gap: 8px; background: #e0f2fe; color: #0369a1; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+								<span class="dashicons dashicons-shield" style="font-size: 16px; width: 16px; height: 16px; margin: 0;"></span>
+								<?php esc_html_e('Active & Protecting', 'new-grid-gallery'); ?>
+							</div>
+							<a href="<?php echo esc_url(admin_url('admin.php?page=right-click-disable-or-ban-free')); ?>" class="gg-btn gg-btn-secondary">
+								<span class="dashicons dashicons-admin-generic"></span> <?php esc_html_e('Configure Protection Settings', 'new-grid-gallery'); ?>
+							</a>
+						</div>
+					<?php elseif ($is_rcb_installed) : ?>
+						<div class="rcb-status-container" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+							<div style="display: inline-flex; align-items: center; gap: 8px; background: #ffedd5; color: #c2410c; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+								<span class="dashicons dashicons-warning" style="font-size: 16px; width: 16px; height: 16px; margin: 0;"></span>
+								<?php esc_html_e('Installed (Inactive)', 'new-grid-gallery'); ?>
+							</div>
+							<a href="<?php echo esc_url(wp_nonce_url(self_admin_url('plugins.php?action=activate&plugin=' . $rcb_plugin), 'activate-plugin_' . $rcb_plugin)); ?>" class="gg-btn gg-btn-primary">
+								<span class="dashicons dashicons-yes-alt"></span> <?php esc_html_e('Activate Right Click Ban', 'new-grid-gallery'); ?>
+							</a>
+						</div>
+					<?php else : ?>
+						<div class="rcb-status-container" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+							<div style="display: inline-flex; align-items: center; gap: 8px; background: #f1f5f9; color: #475569; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+								<span class="dashicons dashicons-info" style="font-size: 16px; width: 16px; height: 16px; margin: 0;"></span>
+								<?php esc_html_e('Recommended Plugin', 'new-grid-gallery'); ?>
+							</div>
+							<a href="<?php echo esc_url(wp_nonce_url(self_admin_url('update.php?action=install-plugin&plugin=right-click-disable-or-ban'), 'install-plugin_right-click-disable-or-ban')); ?>" class="gg-btn gg-btn-primary">
+								<span class="dashicons dashicons-download"></span> <?php esc_html_e('Install Free Right Click Ban Plugin', 'new-grid-gallery'); ?>
+							</a>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- Tab 3: Typography & Navigation -->
@@ -431,10 +484,14 @@ $grid_gallery_id = esc_attr($post->ID);
 			<div class="awl-upgrade-pro-header">
 				<h2><?php esc_html_e('Unlock the Full Power of Grid Gallery Premium', 'new-grid-gallery'); ?></h2>
 				<p class="pro-description"><?php esc_html_e('Upgrade to the Premium version to get responsive grids with dedicated tablet/mobile columns, inline video embedding for YouTube/Vimeo/Local MP4, frosted glassmorphism overlays, 20+ transition animations, pagination, and much more.', 'new-grid-gallery'); ?></p>
-				<div class="header-cta-wrapper" style="margin-top: 25px;">
+				<div class="header-cta-wrapper" style="margin-top: 25px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
 					<a href="https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/" target="_blank" class="awl-btn-pro-upgrade header-upgrade-btn">
 						<span class="dashicons dashicons-star-filled"></span>
 						<?php esc_html_e('Upgrade to Grid Gallery Premium Now', 'new-grid-gallery'); ?>
+					</a>
+					<a href="https://awplife.com/demo/grid-gallery-premium/" target="_blank" class="header-demo-btn">
+						<span class="dashicons dashicons-visibility"></span>
+						<?php esc_html_e('Check Live Demo', 'new-grid-gallery'); ?>
 					</a>
 				</div>
 			</div>

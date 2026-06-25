@@ -4,11 +4,11 @@ Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Create a beautiful Photo Gallery, Image Gallery, or Portfolio on your website. Use simple shortcodes to show your images.
+Create a beautiful Photo Gallery, Image Gallery, or Portfolio. Use Simple Shortcodes and it Supports Gutenberg Block and Elementor Widget.
 
 == Description ==
 
@@ -23,7 +23,7 @@ It works great for:
 * Bloggers sharing their favorite travel stories.
 
 **View Pro Demo:** **[Grid Gallery Premium](https://awplife.com/demo/grid-gallery-premium/)**
-**More About Pro:** **[Grid Gallery Premium Features](https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/)**
+**More About Pro:** **[Grid Gallery Premium](https://awplife.com/wordpress-plugins/grid-gallery-wordpress-plugin/)**
 **Where To Buy:** **[Buy Grid Gallery Premium](https://awplife.com/account/signup/grid-gallery-premium)**
 
 https://www.youtube.com/watch?v=GusIaoInRJQ
@@ -79,9 +79,11 @@ Unlock the full potential of your galleries with our premium version:
 
 **More Pro Demo Examples**
 
-* [Customize Border Settings](https://awplife.com/demo/grid-gallery-premium/customize-border-settings/)
+* [Video in Grid Gallery](https://awplife.com/demo/grid-gallery-premium/grid-with-video/)
+* [Load More Button](https://awplife.com/demo/grid-gallery-premium/load-more-button/)
+* [Aspect Ratio](https://awplife.com/demo/grid-gallery-premium/aspect-ratio/)
 * [Image Hover Effects](https://awplife.com/demo/grid-gallery-premium/image-hover-effects/)
-* [Gallery Spacing Settings](http://awplife.com/demo/grid-gallery-premium/spacing-settings/)
+* [Gallery Spacing](http://awplife.com/demo/grid-gallery-premium/spacing-settings/)
 * [Title And Description On Thumbnails](https://awplife.com/demo/grid-gallery-premium/title-and-description-on-thumbnails/)
 * [Multiple Column Layout](https://awplife.com/demo/grid-gallery-premium/column-layout/)
 
@@ -137,6 +139,12 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Changelog ==
 
+= 2.0.2 =
+* Date: 25 June 2026
+* Added Right Click Protection card under layout settings page recommending the Right Click Ban plugin.
+* Updated documentation page with information on Right Click Protection.
+* Added live demo, rating, and upgrade buttons on the documentation page and the Upgrade to Pro tab.
+
 = 2.0.1 =
 * Date: 17 June 2026
 * Updated gallery navigation SVG icons for better visibility.
@@ -178,6 +186,9 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Upgrade Notice ==
 
+= 2.0.2 =
+Added Right Click Protection and updated CTA buttons across the Docs page and settings. Recommended update.
+
 = 2.0.1 =
 Minor UI tweaks and branding fixes. Recommended update.
 
@@ -186,6 +197,3 @@ Upgrading from v1.5.5 introduces a brand new settings panel layout, major builde
 
 = 1.5.5 =
 Added support for "Our Plugins" and "Our Themes" submenu pages with secure cache refresh and modern responsive designs. Update recommended for all users.
-
-= 1.5.4 =
-Tested and compatible with WordPress 6.9. Update recommended for all users.
