@@ -5,13 +5,45 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Plugin Name: Grid Gallery
  * Plugin URI: https://awplife.com/
  * Description: Grid gallery plugin with preview for WordPress.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: A WP Life
  * Author URI: https://awplife.com/
  * Text Domain: new-grid-gallery
  * Domain Path: /languages
  * License: GPLv2 or later
  */
+
+/**
+ * Check if Grid Gallery Premium version is active.
+ * Yield priority to Premium version to prevent headers already sent errors and class conflicts while keeping both plugins active.
+ */
+if ( ! function_exists( 'gg_is_premium_active' ) ) {
+	function gg_is_premium_active() {
+		if ( defined( 'GG_PREMIUM_VER' ) || defined( 'GGP_PREMIUM_VER' ) || defined( 'AWL_GG_PREMIUM' ) || class_exists( 'Awl_Grid_Gallery_Premium' ) || class_exists( 'Grid_Gallery_Premium' ) ) {
+			return true;
+		}
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		$premium_plugins = array(
+			'grid-gallery-premium/grid-gallery-premium.php',
+			'grid-gallery-premium/grid-gallery.php',
+			'grid-gallery-premium/index.php',
+			'grid-gallery-pro/grid-gallery-pro.php',
+			'grid-gallery-pro/grid-gallery.php',
+		);
+		foreach ( $premium_plugins as $plugin ) {
+			if ( is_plugin_active( $plugin ) ) {
+				return true;
+			}
+		}
+		return false;
+	}
+}
+
+if ( gg_is_premium_active() ) {
+	return;
+}
 
 if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 
@@ -24,28 +56,28 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		
 		protected function _constants() {
 			//Plugin Version
-			define( 'GG_PLUGIN_VER', '2.0.2' );
+			if ( ! defined( 'GG_PLUGIN_VER' ) ) define( 'GG_PLUGIN_VER', '2.0.3' );
 			
 			//Plugin Text Domain
-			define("GGP_TXTDM","new-grid-gallery" );
+			if ( ! defined( 'GGP_TXTDM' ) ) define( 'GGP_TXTDM', 'new-grid-gallery' );
  
 			//Plugin Name
-			define( 'GG_PLUGIN_NAME', 'New Grid Gallery' );
+			if ( ! defined( 'GG_PLUGIN_NAME' ) ) define( 'GG_PLUGIN_NAME', 'New Grid Gallery' );
 
 			//Plugin Slug
-			define( 'GG_PLUGIN_SLUG', 'grid_gallery' );
+			if ( ! defined( 'GG_PLUGIN_SLUG' ) ) define( 'GG_PLUGIN_SLUG', 'grid_gallery' );
 
 			//Plugin Directory Path
-			define( 'GG_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+			if ( ! defined( 'GG_PLUGIN_DIR' ) ) define( 'GG_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 			//Plugin Directory URL
-			define( 'GG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+			if ( ! defined( 'GG_PLUGIN_URL' ) ) define( 'GG_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 			/**
 			 * Create a key for the .htaccess secure download link.
 			 * @uses    NONCE_KEY     Defined in the WP root config.php
 			 */
-			define( 'GG_SECURE_KEY', md5( NONCE_KEY ) );
+			if ( ! defined( 'GG_SECURE_KEY' ) && defined( 'NONCE_KEY' ) ) define( 'GG_SECURE_KEY', md5( NONCE_KEY ) );
 			
 		} // end of constructor function
 		
@@ -180,9 +212,9 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		}
 		
 		public function _Grid_Menu() {
-			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Docs', 'new-grid-gallery' ), __( 'Docs', 'new-grid-gallery' ), 'administrator', 'sr-doc-page', array( $this, '_gg_doc_page') );
-			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Our Plugins', 'new-grid-gallery' ), __( 'Our Plugins', 'new-grid-gallery' ), 'administrator', 'gg-our-plugins', array( $this, '_gg_our_plugins_page') );
-			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Our Themes', 'new-grid-gallery' ), __( 'Our Themes', 'new-grid-gallery' ), 'administrator', 'gg-our-themes', array( $this, '_gg_our_themes_page') );
+			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Docs', 'new-grid-gallery' ), __( 'Docs', 'new-grid-gallery' ), 'manage_options', 'gg-doc-page', array( $this, '_gg_doc_page') );
+			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Our Plugins', 'new-grid-gallery' ), __( 'Our Plugins', 'new-grid-gallery' ), 'manage_options', 'gg-our-plugins', array( $this, '_gg_our_plugins_page') );
+			add_submenu_page( 'edit.php?post_type='.GG_PLUGIN_SLUG, __( 'Our Themes', 'new-grid-gallery' ), __( 'Our Themes', 'new-grid-gallery' ), 'manage_options', 'gg-our-themes', array( $this, '_gg_our_themes_page') );
 		}
 		
 		/**

@@ -4,7 +4,7 @@ Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +139,12 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Changelog ==
 
+= 2.0.3 =
+* Date: 27 June 2026
+* Fixed dashboard sub-menu permissions by replacing role string with manage_options capability.
+* Improved admin button hover states and styling consistency across settings.
+* Added seamless coexistence support for Grid Gallery Premium, yielding execution priority without conflicts or header errors.
+
 = 2.0.2 =
 * Date: 25 June 2026
 * Added Right Click Protection card under layout settings page recommending the Right Click Ban plugin.
@@ -185,6 +191,9 @@ You can ask questions on our support forum. We are happy to help you.
 * Tested with WordPress 6.7.2
 
 == Upgrade Notice ==
+
+= 2.0.3 =
+Fixed menu permissions, refined admin button hover styles, and added seamless Grid Gallery Premium coexistence. Recommended update.
 
 = 2.0.2 =
 Added Right Click Protection and updated CTA buttons across the Docs page and settings. Recommended update.
