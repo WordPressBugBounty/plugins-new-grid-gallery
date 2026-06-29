@@ -4,7 +4,8 @@ Donate link: https://paypal.me/awplife
 Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 2.0.3
+Requires PHP: 7.4
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +140,13 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Changelog ==
 
+= 2.0.4 =
+* Date: 29 June 2026
+* Modernized Gutenberg Block and Elementor Widget structures.
+* Fixed block image rendering issue inside WordPress page editors by automatically disabling lazy loading in admin and REST preview requests.
+* Resolved asset enqueuing inside page builder preview contexts.
+* Implemented cache key separation for admin previews to avoid conflicts with frontend performance cache.
+
 = 2.0.3 =
 * Date: 27 June 2026
 * Fixed dashboard sub-menu permissions by replacing role string with manage_options capability.
@@ -191,6 +199,9 @@ You can ask questions on our support forum. We are happy to help you.
 * Tested with WordPress 6.7.2
 
 == Upgrade Notice ==
+
+= 2.0.4 =
+Modernized Gutenberg Block and Elementor Widget integrations, fixing AJAX layout loading, enqueuing, and lazy-loading preview displays inside WordPress page builders. Recommended update.
 
 = 2.0.3 =
 Fixed menu permissions, refined admin button hover styles, and added seamless Grid Gallery Premium coexistence. Recommended update.

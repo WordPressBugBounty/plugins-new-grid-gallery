@@ -73,7 +73,7 @@ function awl_grid_gallery_shortcode($atts) {
 	$g_gallery_load_more = "no";
 	if(isset($gg_settings['url_target'])) $url_target = $gg_settings['url_target']; else $url_target = "_new";
 	// Resolve per-gallery loading settings (global settings page removed)
-	$lazy_loading = 'yes';
+	$lazy_loading = ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) ? 'no' : 'yes';
 	$skeleton_loading = 'no';
 	$gallery_loader = isset($gg_settings['gallery_loader']) ? $gg_settings['gallery_loader'] : 'spinner';
 	$gallery_loader_color = isset($gg_settings['gallery_loader_color']) ? $gg_settings['gallery_loader_color'] : '#4f46e5';
@@ -445,11 +445,17 @@ function awl_grid_gallery_shortcode($atts) {
 	});
 	";
 
-	// Hook JS execution directly into wp_footer to guarantee FSE/Block theme compatibility
-	add_action( 'wp_footer', function() use ( $inline_js ) {
+	// Hook JS execution directly into wp_footer to guarantee FSE/Block theme compatibility,
+	// but output immediately in admin/builder/REST contexts so it runs during editor previews.
+	if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo "<script type='text/javascript'>\n" . $inline_js . "\n</script>";
-	}, 100 );
+	} else {
+		add_action( 'wp_footer', function() use ( $inline_js ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo "<script type='text/javascript'>\n" . $inline_js . "\n</script>";
+		}, 100 );
+	}
 
 	// load without lightbox gallery output using cache transient
 	$is_ajax = isset($_POST['gg_security']);
@@ -465,6 +471,9 @@ function awl_grid_gallery_shortcode($atts) {
 
 	$global_cache_version = get_option('awl_gg_global_cache_version', 1);
 	$cache_key = 'gg_c_opt_' . $grid_gallery_id . '_v' . $cache_version . '_g' . $global_cache_version;
+	if ( is_admin() || ( defined( 'REST_REQUEST' ) && REST_REQUEST ) ) {
+		$cache_key .= '_adm';
+	}
 	if ($is_ajax) {
 		$cache_key .= '_a_' . $gg_start . '_' . $gg_end . '_' . md5($gg_ordered_ids);
 	}

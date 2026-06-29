@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Plugin Name: Grid Gallery
  * Plugin URI: https://awplife.com/
  * Description: Grid gallery plugin with preview for WordPress.
- * Version: 2.0.3
+ * Version: 2.0.4
  * Author: A WP Life
  * Author URI: https://awplife.com/
  * Text Domain: new-grid-gallery
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		
 		protected function _constants() {
 			//Plugin Version
-			if ( ! defined( 'GG_PLUGIN_VER' ) ) define( 'GG_PLUGIN_VER', '2.0.3' );
+			if ( ! defined( 'GG_PLUGIN_VER' ) ) define( 'GG_PLUGIN_VER', '2.0.4' );
 			
 			//Plugin Text Domain
 			if ( ! defined( 'GGP_TXTDM' ) ) define( 'GGP_TXTDM', 'new-grid-gallery' );
@@ -118,11 +118,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 
 			add_action( 'admin_footer', array( $this, 'ggp_admin_footer_scripts' ) );
 
-			// Register Gutenberg Block selector
-			add_action( 'init', array( $this, 'ggp_register_gutenberg_block' ) );
 
-			// Register Elementor Widget selector
-			add_action( 'init', array( $this, 'ggp_elementor_init' ) );
 
 
 			// Remove "View post" link from update messages
@@ -564,101 +560,33 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 			require_once( GG_PLUGIN_DIR . 'admin/our-themes.php' );
 		}
 
-		/**
-		 * Register Gutenberg block for Grid Gallery Selection
-		 */
-		public function ggp_register_gutenberg_block() {
-			if ( ! function_exists( 'register_block_type' ) ) {
-				return;
-			}
-
-			wp_register_script(
-				'ggp-gutenberg-block-js',
-				GG_PLUGIN_URL . 'assets/js/gg-gutenberg-block.js',
-				array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-server-side-render', 'jquery' ),
-				GG_PLUGIN_VER
-			);
-
-			$galleries_query = new WP_Query( array(
-				'post_type'      => 'grid_gallery',
-				'posts_per_page' => -1,
-				'post_status'    => 'publish',
-			) );
-
-			$galleries = array();
-			if ( $galleries_query->have_posts() ) {
-				while ( $galleries_query->have_posts() ) {
-					$galleries_query->the_post();
-					$galleries[] = array(
-						'id'    => get_the_ID(),
-						'title' => get_the_title(),
-					);
-				}
-				wp_reset_postdata();
-			}
-
-			wp_localize_script( 'ggp-gutenberg-block-js', 'ggGutenbergGalleries', $galleries );
-
-			register_block_type( 'new-grid-gallery/gallery-select', array(
-				'editor_script'   => 'ggp-gutenberg-block-js',
-				'render_callback' => array( $this, 'ggp_render_gutenberg_block' ),
-				'attributes'      => array(
-					'galleryId' => array(
-						'type'    => 'string',
-						'default' => '',
-					),
-				),
-			) );
-		}
-
-		/**
-		 * Render Gutenberg block
-		 */
-		public function ggp_render_gutenberg_block( $attributes ) {
-			if ( empty( $attributes['galleryId'] ) ) {
-				return '<p style="padding:20px; text-align:center; border:1px dashed #ccc;">' . esc_html__( 'No Grid Gallery selected.', 'new-grid-gallery' ) . '</p>';
-			}
-			return do_shortcode( '[GGAL id=' . intval( $attributes['galleryId'] ) . ']' );
-		}
-
-		/**
-		 * Register Elementor Widget Integration
-		 */
-		public function ggp_elementor_init() {
-			if ( ! did_action( 'elementor/loaded' ) ) {
-				return;
-			}
-			add_action( 'elementor/widgets/register', array( $this, 'ggp_register_elementor_widget' ) );
-		}
-
-		public function ggp_register_elementor_widget( $widgets_manager ) {
-			require_once( GG_PLUGIN_DIR . 'includes/class-elementor-grid-gallery-widget.php' );
-			$widgets_manager->register( new \Elementor_Grid_Gallery_Widget() );
-		}
-
-
-
-
-	
 	} // end of class
 	
 	// register sf scripts
-		function awplife_ggp_register_scripts(){
-			// css & JS
+	function awplife_ggp_register_scripts(){
+		// css & JS
+		wp_register_script('awl-gridder-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.gridder.min.js', array('jquery', 'jquery-effects-core'), GG_PLUGIN_VER, true);
+		wp_register_style( 'gg-gridder-css', plugin_dir_url(__FILE__). 'assets/css/jquery.gridder.min.css', array(), GG_PLUGIN_VER); 
+		wp_register_style( 'gg-frontend-css', plugin_dir_url(__FILE__). 'assets/css/grid-gallery-frontend.css', array(), GG_PLUGIN_VER); 
+		wp_register_style( 'ggp-hover-css', plugin_dir_url(__FILE__). 'assets/css/hover.css', array(), GG_PLUGIN_VER); 
+
+		if ( ! is_admin() ) {
 			wp_enqueue_script('jquery');
 			wp_enqueue_script('jquery-effects-core');
-			wp_enqueue_script('awl-gridder-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.gridder.min.js', array('jquery', 'jquery-effects-core'), GG_PLUGIN_VER, true);
-			wp_enqueue_style( 'gg-gridder-css', plugin_dir_url(__FILE__). 'assets/css/jquery.gridder.min.css', array(), GG_PLUGIN_VER); 
-			wp_enqueue_style( 'gg-frontend-css', plugin_dir_url(__FILE__). 'assets/css/grid-gallery-frontend.css', array(), GG_PLUGIN_VER); 
-			// css & JS
-			
-		}	
-		add_action( 'wp_enqueue_scripts', 'awplife_ggp_register_scripts' );
+			wp_enqueue_script('awl-gridder-js');
+			wp_enqueue_style('gg-gridder-css');
+			wp_enqueue_style('gg-frontend-css');
+		}
+	}	
+	add_action( 'wp_enqueue_scripts', 'awplife_ggp_register_scripts' );
+	add_action( 'admin_enqueue_scripts', 'awplife_ggp_register_scripts' );
 
 	/**
 	 * Instantiates the Class
 	 */
 	$gg_gallery_object = new Awl_Grid_Gallery();
-		require_once( GG_PLUGIN_DIR . 'includes/grid-gallery-shortcode.php' );
+	require_once( GG_PLUGIN_DIR . 'includes/grid-gallery-shortcode.php' );
+	require_once( GG_PLUGIN_DIR . 'includes/elementor-widget.php' );
+	require_once( GG_PLUGIN_DIR . 'includes/gutenberg-block.php' );
 } // end of class exists
 ?>
