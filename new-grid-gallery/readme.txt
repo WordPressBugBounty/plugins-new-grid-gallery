@@ -5,7 +5,7 @@ Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.4
+Stable tag: 2.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,7 +59,6 @@ https://www.youtube.com/watch?v=GusIaoInRJQ
 * **Clickable Link Actions:** Configure "Read More" hyperlinks and link opening behavior (New Tab vs Same Tab).
 * **Gutenberg Block Integration:** Seamlessly select and insert grid galleries using the native editor block.
 * **Elementor Widget Support:** Easily drag and drop grid galleries inside the Elementor page builder.
-
 
 = Pro Features =
 
@@ -139,6 +138,10 @@ You can ask questions on our support forum. We are happy to help you.
 8. Gallery Frontend With Spacing and Frame, Image Drawer
 
 == Changelog ==
+
+= 2.0.5 =
+* Date: 9 July 2026
+* Our plugin and our themes CSS fixed
 
 = 2.0.4 =
 * Date: 29 June 2026

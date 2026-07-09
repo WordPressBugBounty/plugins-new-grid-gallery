@@ -66,7 +66,11 @@ usort( $themes, function ( $a, $b ) {
             <h3><?php esc_html_e( 'Refreshing our theme collection...', 'new-grid-gallery' ); ?></h3>
         </div>
 	<?php else : ?>
-        <div class="ig-plugins-grid">
+        <div class="ig-loading-wrap" id="ig-page-loader">
+            <div class="ig-spinner"></div>
+            <h3><?php esc_html_e( 'Loading themes...', 'new-grid-gallery' ); ?></h3>
+        </div>
+        <div class="ig-plugins-grid" id="ig-themes-container" style="display:none;">
 			<?php foreach ( $themes as $theme ) :
 				$theme = (array) $theme;
 				$screenshot = ! empty( $theme['screenshot_url'] ) ? $theme['screenshot_url'] : '';
@@ -115,3 +119,11 @@ usort( $themes, function ( $a, $b ) {
         </div>
 	<?php endif; ?>
 </div>
+
+<script>
+jQuery(window).on('load', function() {
+    jQuery('#ig-page-loader').fadeOut(300, function() {
+        jQuery('#ig-themes-container').fadeIn(300);
+    });
+});
+</script>

@@ -264,7 +264,11 @@ usort( $filtered_plugins, function ( $a, $b ) {
             </a>
         </div>
 	<?php else : ?>
-        <div class="ig-plugins-grid" id="ig-plugins-container">
+        <div class="ig-loading-wrap" id="ig-page-loader">
+            <div class="ig-spinner"></div>
+            <h3><?php esc_html_e( 'Loading plugins...', 'new-grid-gallery' ); ?></h3>
+        </div>
+        <div class="ig-plugins-grid" id="ig-plugins-container" style="display:none;">
 			<?php foreach ( $filtered_plugins as $plugin ) :
                 $plugin = (array) $plugin;
 				$icons = isset($plugin['icons']) ? (array) $plugin['icons'] : array();
@@ -335,6 +339,12 @@ usort( $filtered_plugins, function ( $a, $b ) {
 </div>
 
 <script>
+jQuery(window).on('load', function() {
+    jQuery('#ig-page-loader').fadeOut(300, function() {
+        jQuery('#ig-plugins-container').fadeIn(300);
+    });
+});
+
 jQuery(document).ready(function($) {
     $('.ig-filter-btn').on('click', function() {
         var filter = $(this).data('filter');
