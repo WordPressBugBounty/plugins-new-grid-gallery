@@ -5,7 +5,7 @@ Tags: gallery, image gallery, photo gallery, responsive gallery, portfolio
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -139,6 +139,11 @@ You can ask questions on our support forum. We are happy to help you.
 
 == Changelog ==
 
+= 2.0.6 =
+* Date: 20 July 2026
+* Redesigned custom shortcode, copy button, and copied status badge on All Gallery admin listing page.
+* Improved free and premium coexistence handling to bypass free version execution when Grid Gallery Premium is active.
+
 = 2.0.5 =
 * Date: 9 July 2026
 * Our plugin and our themes CSS fixed
@@ -202,6 +207,9 @@ You can ask questions on our support forum. We are happy to help you.
 * Tested with WordPress 6.7.2
 
 == Upgrade Notice ==
+
+= 2.0.6 =
+Redesigned All Gallery custom shortcode columns and added coexistence priority bypass when Grid Gallery Premium is active. Recommended update.
 
 = 2.0.4 =
 Modernized Gutenberg Block and Elementor Widget integrations, fixing AJAX layout loading, enqueuing, and lazy-loading preview displays inside WordPress page builders. Recommended update.

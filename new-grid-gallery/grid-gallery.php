@@ -5,13 +5,24 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Plugin Name: Grid Gallery
  * Plugin URI: https://awplife.com/
  * Description: Grid gallery plugin with preview for WordPress.
- * Version: 2.0.5
+ * Version: 2.0.6
  * Author: A WP Life
  * Author URI: https://awplife.com/
  * Text Domain: new-grid-gallery
  * Domain Path: /languages
  * License: GPLv2 or later
  */
+
+// If Grid Gallery Premium is active, bypass Free version to let Premium take priority
+$active_plugins = (array) get_option( 'active_plugins', array() );
+if ( is_multisite() ) {
+	$active_plugins = array_merge( $active_plugins, array_keys( (array) get_site_option( 'active_sitewide_plugins', array() ) ) );
+}
+foreach ( $active_plugins as $plugin ) {
+	if ( strpos( $plugin, 'grid-gallery-premium.php' ) !== false ) {
+		return;
+	}
+}
 
 /**
  * Check if Grid Gallery Premium version is active.
@@ -56,7 +67,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		
 		protected function _constants() {
 			//Plugin Version
-			if ( ! defined( 'GG_PLUGIN_VER' ) ) define( 'GG_PLUGIN_VER', '2.0.5' );
+			if ( ! defined( 'GG_PLUGIN_VER' ) ) define( 'GG_PLUGIN_VER', '2.0.6' );
 			
 			//Plugin Text Domain
 			if ( ! defined( 'GGP_TXTDM' ) ) define( 'GGP_TXTDM', 'new-grid-gallery' );
@@ -145,9 +156,9 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 		public function custom_ggp_shodrcode_data( $column, $post_id ) {
 			switch ( $column ) {
 				case 'ggp_shortcode' :
-					echo "<input type='text' class='button button-primary' id='ggp-shortcode-" . esc_attr( $post_id ) . "' value='[GGAL id=" . esc_attr( $post_id ) . "]' style='font-weight:bold; background-color:#32373C; color:#FFFFFF; text-align:center;' />";
-					echo "<input type='button' class='button button-primary' onclick='return GGPCopyShortcode(" . esc_attr( $post_id ) . ");' readonly value='Copy' style='margin-left:4px;' />";
-					echo "<span id='copy-msg-" . esc_attr( $post_id ) . "' class='button button-primary' style='display:none; background-color:#32CD32; color:#FFFFFF; margin-left:4px; border-radius: 4px;'>copied</span>";
+					echo "<input type='text' id='ggp-shortcode-" . esc_attr( $post_id ) . "' value='[GGAL id=" . esc_attr( $post_id ) . "]' readonly style='font-weight: 500; font-family: monospace; background-color: #f8fafc; color: #334155; border: 1px solid #cbd5e1; border-radius: 6px; text-align: center; padding: 6px 12px; height: 32px; line-height: 18px; box-shadow: none; outline: none; min-width: 140px;' />";
+					echo "<input type='button' onclick='return GGPCopyShortcode(" . esc_attr( $post_id ) . ");' readonly value='" . esc_attr__( 'Copy', 'new-grid-gallery' ) . "' style='font-weight: 600; background-color: #4f46e5; color: #ffffff; border: none; border-radius: 6px; padding: 0 16px; height: 32px; line-height: 32px; cursor: pointer; transition: background 0.15s ease; box-shadow: 0 1px 2px rgba(79, 70, 229, 0.1); margin-left: 6px; display: inline-block; vertical-align: middle;' onmouseover='this.style.background=\"#4338ca\"' onmouseout='this.style.background=\"#4f46e5\"' />";
+					echo "<span id='copy-msg-" . esc_attr( $post_id ) . "' style='display:none; background-color: #10b981; color: #ffffff; font-weight: 600; font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif; border-radius: 6px; padding: 0 12px; height: 32px; line-height: 32px; margin-left: 6px; vertical-align: middle; font-size: 13px;'>" . esc_html__( 'copied', 'new-grid-gallery' ) . "</span>";
 				break;
 			}
 		}
@@ -162,7 +173,7 @@ if ( ! class_exists( 'Awl_Grid_Gallery' ) ) {
 					if (copyText) {
 						copyText.select();
 						document.execCommand('copy');
-						jQuery('#copy-msg-' + post_id).fadeIn('1000', 'linear');
+						jQuery('#copy-msg-' + post_id).css('display', 'inline-block').hide().fadeIn('500', 'linear');
 						jQuery('#copy-msg-' + post_id).fadeOut(2500, 'swing');
 					}
 					return false;
